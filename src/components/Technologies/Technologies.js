@@ -3,13 +3,14 @@ import {DiAngularSimple, DiBootstrap,DiDatabase,} from 'react-icons/di';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
 
-const Technologies = () =>  (
+const Technologies = () => (
   <Section id="tech">
     <SectionDivider divider />
     <SectionTitle>Technologies</SectionTitle>
     <SectionText>
-      I've learned a range of technologies in the web development world.
-      From Back-end To Design
+      Specialized in building scalable applications with cutting-edge
+      technologies, focusing on backend systems, AI integration, and modern web
+      frameworks.
     </SectionText>
     <List>
       <ListItem>
@@ -19,12 +20,12 @@ const Technologies = () =>  (
         <ListContainer>
           <ListTitle>Back-End</ListTitle>
           <ListParagraph>
-            Experiece with <br />
-            Python <br />
-            Java, Springboot <br />
-            Node.js <br />
-            Docker <br />
-            Database: PostgreSQL, Oracle
+            Core expertise in <br />
+            Python (FastAPI, Flask, Django) <br />
+            Java (Spring Boot) <br />
+            PostgreSQL, Oracle <br />
+            OpenAI & Azure AI integration <br />
+            Data processing (Pandas, NumPy)
           </ListParagraph>
         </ListContainer>
       </ListItem>
@@ -36,10 +37,11 @@ const Technologies = () =>  (
           <ListTitle>Front-End</ListTitle>
           <ListParagraph>
             Experience with <br />
-            Angular and Typescript <br />
-            React and next.js <br />
-            Tailwind <br />
-            Html, CSS
+            React <br />
+            Angular <br />
+            TypeScript <br />
+            Tailwind CSS <br />
+            RESTful API integration
           </ListParagraph>
         </ListContainer>
       </ListItem>
@@ -48,12 +50,13 @@ const Technologies = () =>  (
           <DiBootstrap size="3rem" />
         </picture>
         <ListContainer>
-          <ListTitle>UI/UX</ListTitle>
+          <ListTitle>Development Tools</ListTitle>
           <ListParagraph>
-            Experience with <br />
-            Bootstrap <br />
-            Apache Superset <br />
-            tools like Canva and Figma
+            Proficient with <br />
+            Git/GitHub <br />
+            Azure <br />
+            Postman <br />
+            SQL Data Modeling
           </ListParagraph>
         </ListContainer>
       </ListItem>
