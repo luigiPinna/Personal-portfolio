@@ -2,5 +2,8 @@ module.exports = {
     compiler: {
       styledComponents: true
     },
-    output: 'export'
+    output: 'export',
+    images: {
+      unoptimized: true
+    }
   }

@@ -1,0 +1,31 @@
+{
+  "journey": [
+    {
+      "year": "2024",
+      "title": "Software Engineer @ Aevoluta",
+      "description": "Complete development of software and web applications, from design, development and deployment of frontend (React) and backend (FastAPI) components with associated maintenance activities on different technology stacks.",
+      "technologies": ["Python (FastAPI)", "React", "PostgreSQL", "OpenAI APIs", "Azure AI Search", "CICD"],
+      "type": "work"
+    },
+    {
+      "year": "2022",
+      "title": "Backend Engineer @ Aevoluta",
+      "description": "Development and maintenance of backend services with FastAPI (Python) and PostgreSQL. Designing RPA systems using UiPath for the automation of complex business processes.",
+      "technologies": ["FastAPI", "PostgreSQL", "Python", "UiPath", "Data Modeling"],
+      "type": "work"
+    },
+    {
+      "year": "2021",
+      "title": "Professional Certification in Computer Science",
+      "description": "Extensive practice in structured programming, database management, and web development. Focus on Java Spring Boot, Angular, and modern web technologies.",
+      "technologies": ["Java", "Spring Boot", "Angular", "TypeScript", "React"],
+      "type": "education"
+    },
+    {
+      "year": "2019",
+      "title": "Bachelor's Degree in Business Administration",
+      "description": "University of Cagliari - Strong foundations in Financial and Applied Mathematics, expertise in Big Data analytics for banking.",
+      "type": "education"
+    }
+  ]
+} 
