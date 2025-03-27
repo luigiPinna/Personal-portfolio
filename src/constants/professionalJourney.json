@@ -3,15 +3,22 @@
     {
       "year": "2024",
       "title": "Software Engineer @ Aevoluta",
-      "description": "Complete development of software and web applications, from design, development and deployment of frontend (React) and backend (FastAPI) components with associated maintenance activities on different technology stacks.",
-      "technologies": ["Python (FastAPI)", "React", "PostgreSQL", "OpenAI APIs", "Azure AI Search", "CICD"],
+      "description": "Complete development of software and web applications, from design, development and deployment of frontend (React) and backend (FastAPI) components with associated maintenance activities on different technology stacks. Implementation of APIs and integration of AI services (OpenAI, Azure AI) with related frontend interfaces. These projects were developed completely independently for major customers in the banking sector, handling high levels of complexity and responsibility.",
+      "technologies": ["Python (FastAPI e Flask)", "React", "PostgreSQL", "OpenAI APIs", "Azure AI Search", "CICD jenkins or bitbucket"],
       "type": "work"
     },
     {
       "year": "2022",
       "title": "Backend Engineer @ Aevoluta",
-      "description": "Development and maintenance of backend services with FastAPI (Python) and PostgreSQL. Designing RPA systems using UiPath for the automation of complex business processes.",
-      "technologies": ["FastAPI", "PostgreSQL", "Python", "UiPath", "Data Modeling"],
+      "description": "Development and maintenance of backend services with FastAPI (Python) and PostgreSQL. Designing RPA systems using UiPath for the automation of complex business processes for major international fashion clients. Implementation of solutions in Python for data automation, processing and transformation.",
+      "technologies": ["FastAPI", "PostgreSQL", "Python (Pandas, NumPy)", "UiPath", "Data Modeling"],
+      "type": "work"
+    },
+    {
+      "year": "2021",
+      "title": "IT & DATA @ ElleDi",
+      "description": "Extrapolation, data analysis and report creation to track and report financial metrics. Optimisation of ERP processes by creating customised reports and digitisation initiatives.",
+      "technologies": ["Postgresql", "Gamma Spring"],
       "type": "work"
     },
     {

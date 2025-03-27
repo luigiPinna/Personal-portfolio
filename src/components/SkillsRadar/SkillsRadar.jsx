@@ -71,7 +71,7 @@ const SkillsRadar = () => {
 
   return (
     <Section nopadding id="skillsRadar">
-    
+    <SectionDivider />
     <SectionTitle main>Technical Expertise</SectionTitle>
     <div className="w-full max-w-4xl mx-auto p-6">
       <div className="bg-gray-800 rounded-lg p-6">
