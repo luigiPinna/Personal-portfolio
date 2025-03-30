@@ -34,20 +34,22 @@ const Header = () => (
         </NavLink>
       </li>
       <li>
-        <NavLink href="#about" as={Link}>
-          About
-        </NavLink>
-      </li>
-      <li>
-        <NavLink href="#jurney" as={Link}>
-          Jurney
-        </NavLink>
-      </li>
-      <li>
         <NavLink href="#skillsRadar" as={Link}>
         Skills
         </NavLink>
       </li>
+      <li>
+        <NavLink href="#journey" as={Link}>
+          Jurney
+        </NavLink>
+      </li>
+      <li>
+        <NavLink href="#about" as={Link}>
+          About
+        </NavLink>
+      </li>
+
+
     </Div2>
     <Div3>
       <SocialIcons href="https://github.com/luigiPinna">

@@ -95,7 +95,7 @@ export const TimeLineData = [
   { year: 2018, text: 'Started my journey' },
   { year: 2019, text: 'Earned my Bachelor’s Degree in Business and Economics' },
   { year: 2020, text: 'Worked in IT and Marketing' },
-  { year: 2021, text: 'Finished Full Stack Developer Academy at TheNetValue' },
+  { year: 2021, text: 'Full Stack Developer professional certification at TheNetValue' },
   { year: 2021, text: 'Joined a startup as a Backend Developer' },
   { year: 2024, text: 'Became a Full Stack Developer' },
 ];

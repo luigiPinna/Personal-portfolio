@@ -4,20 +4,6 @@ import { Section, SectionTitle, SectionDivider } from '../../styles/GlobalCompon
 import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 
-const Container = styled.div`
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-`;
-
-const Title = styled(motion.h2)`
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 3rem;
-  color: ${props => props.theme.colors.primary1};
-`;
 
 const TimelineContainer = styled(motion.div)`
   position: relative;
@@ -167,7 +153,7 @@ const ProfessionalJourney = () => {
   return (
     <Section nopadding id="journey">
    
-      <SectionDivider />
+      <SectionDivider divider/>
         <SectionTitle>Professional Journey</SectionTitle>
         
         <TimelineContainer
