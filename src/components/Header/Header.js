@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import {
   AiFillGithub,
@@ -26,6 +27,8 @@ import {
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const router = useRouter();
+  const isHomePage = router.pathname === "/";
 
   // Gestisce lo scroll per cambiare lo stile dell'header
   useEffect(() => {
@@ -46,6 +49,23 @@ const Header = () => {
   // Chiude il menu quando si clicca su un link
   const closeMenu = () => {
     setIsOpen(false);
+  };
+
+  // Funzione per gestire la navigazione a sezioni nella home o reindirizzare alla home
+  const handleNavigation = (e, href) => {
+    e.preventDefault();
+    closeMenu();
+
+    if (isHomePage) {
+      // Se siamo già nella home, scorriamo alla sezione
+      const element = document.getElementById(href.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Se siamo in un'altra pagina, navighiamo alla home con l'ancora
+      router.push(`/${href}`);
+    }
   };
 
   // Impedisce lo scroll quando il menu mobile è aperto
@@ -70,25 +90,35 @@ const Header = () => {
           <DiCssdeck size="3rem" /> <span>LP</span>
         </Link>
       </Div1>
+
       {/* Menu per desktop */}
       <Div2>
         <NavItem>
-          <NavLink href="#projects" as={Link} onClick={closeMenu}>
+          <NavLink
+            href="#projects"
+            onClick={(e) => handleNavigation(e, "#projects")}
+          >
             Projects
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#tech" as={Link} onClick={closeMenu}>
+          <NavLink href="#tech" onClick={(e) => handleNavigation(e, "#tech")}>
             Technologies
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#skillsRadar" as={Link} onClick={closeMenu}>
+          <NavLink
+            href="#skillsRadar"
+            onClick={(e) => handleNavigation(e, "#skillsRadar")}
+          >
             Skills
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#journey" as={Link} onClick={closeMenu}>
+          <NavLink
+            href="#journey"
+            onClick={(e) => handleNavigation(e, "#journey")}
+          >
             Journey
           </NavLink>
         </NavItem>
@@ -98,11 +128,12 @@ const Header = () => {
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#about" as={Link} onClick={closeMenu}>
+          <NavLink href="#about" onClick={(e) => handleNavigation(e, "#about")}>
             About
           </NavLink>
         </NavItem>
       </Div2>
+
       <Div3>
         <SocialIcons href="https://github.com/luigiPinna">
           <AiFillGithub size="3rem" />
@@ -122,28 +153,38 @@ const Header = () => {
           )}
         </MobileIcon>
       </Div3>
+
       {/* Menu mobile */}
       <NavMenu isOpen={isOpen} onClick={(e) => e.stopPropagation()}>
         <CloseButton onClick={closeMenu}>
           <AiOutlineClose size="2.4rem" />
         </CloseButton>
         <NavItem>
-          <NavLink href="#projects" as={Link} onClick={closeMenu}>
+          <NavLink
+            href="#projects"
+            onClick={(e) => handleNavigation(e, "#projects")}
+          >
             Projects
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#tech" as={Link} onClick={closeMenu}>
+          <NavLink href="#tech" onClick={(e) => handleNavigation(e, "#tech")}>
             Technologies
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#skillsRadar" as={Link} onClick={closeMenu}>
+          <NavLink
+            href="#skillsRadar"
+            onClick={(e) => handleNavigation(e, "#skillsRadar")}
+          >
             Skills
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#journey" as={Link} onClick={closeMenu}>
+          <NavLink
+            href="#journey"
+            onClick={(e) => handleNavigation(e, "#journey")}
+          >
             Journey
           </NavLink>
         </NavItem>
@@ -153,7 +194,7 @@ const Header = () => {
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#about" as={Link} onClick={closeMenu}>
+          <NavLink href="#about" onClick={(e) => handleNavigation(e, "#about")}>
             About
           </NavLink>
         </NavItem>
@@ -182,6 +223,7 @@ const Header = () => {
           </SocialIcons>
         </div>
       </NavMenu>
+
       {/* Backdrop solo quando il menu è aperto */}
       {isOpen && <NavbarBackdrop onClick={closeMenu} />}
     </Container>
