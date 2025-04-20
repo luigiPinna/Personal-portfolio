@@ -45,7 +45,7 @@ const PostCard = ({ post }) => {
         <Link href={`/blog/${post.slug}`} passHref legacyBehavior>
           <ReadMore>
             Leggi di più
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </ReadMore>
@@ -55,4 +55,4 @@ const PostCard = ({ post }) => {
   );
 };
 
-export default PostCard; 
+export default PostCard;

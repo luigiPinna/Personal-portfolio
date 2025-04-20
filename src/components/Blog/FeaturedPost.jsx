@@ -27,6 +27,7 @@ const FeaturedPost = ({ post }) => {
           alt={post.title}
           fill
           style={{ objectFit: 'cover' }}
+          priority
         />
       </FeaturedImage>
       <FeaturedContent>
@@ -45,7 +46,7 @@ const FeaturedPost = ({ post }) => {
         <Link href={`/blog/${post.slug}`} passHref legacyBehavior>
           <ReadMore>
             Leggi l'articolo completo
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </ReadMore>
@@ -55,4 +56,4 @@ const FeaturedPost = ({ post }) => {
   );
 };
 
-export default FeaturedPost; 
+export default FeaturedPost;

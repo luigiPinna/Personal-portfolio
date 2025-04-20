@@ -1,11 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const FilterContainer = styled.div`
   margin-bottom: 4rem;
   padding: 2rem;
   background: ${({ theme }) => theme.colors.background};
   border-radius: 1rem;
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+  }
 `;
 
 const SearchInput = styled.input`
@@ -20,7 +25,7 @@ const SearchInput = styled.input`
   transition: all 0.3s ease;
 
   &::placeholder {
-    color: ${({ theme }) => theme.colors.text}80;
+    color: rgba(255, 255, 255, 0.5);
   }
 
   &:focus {
@@ -28,12 +33,22 @@ const SearchInput = styled.input`
     border-color: ${({ theme }) => theme.colors.accent};
     box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.accent}40;
   }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    padding: 1rem;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const CategoryContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    gap: 0.8rem;
+  }
 `;
 
 const CategoryButton = styled.button`
@@ -41,17 +56,36 @@ const CategoryButton = styled.button`
   font-size: 1.4rem;
   border: none;
   border-radius: 2rem;
-  background: ${({ theme, active }) => active ? theme.colors.accent : 'transparent'};
-  color: ${({ theme, active }) => active ? theme.colors.background : theme.colors.text};
+  background: ${({ theme, active }) =>
+    active ? theme.colors.accent : "transparent"};
+  color: ${({ theme, active }) =>
+    active ? theme.colors.background : "rgba(255, 255, 255, 0.7)"};
   cursor: pointer;
   transition: all 0.3s ease;
+  border: 1px solid
+    ${({ theme, active }) =>
+      active ? theme.colors.accent : "rgba(255, 255, 255, 0.2)"};
 
   &:hover {
-    background: ${({ theme }) => theme.colors.accent}20;
+    background: ${({ theme, active }) =>
+      active ? theme.colors.accent : "rgba(255, 255, 255, 0.1)"};
+    color: ${({ theme, active }) =>
+      active ? theme.colors.background : "rgba(255, 255, 255, 0.9)"};
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    padding: 0.6rem 1.2rem;
+    font-size: 1.2rem;
   }
 `;
 
-const BlogFilter = ({ categories, selectedCategory, onCategoryChange, searchQuery, onSearchChange }) => {
+const BlogFilter = ({
+  categories,
+  selectedCategory,
+  onCategoryChange,
+  searchQuery,
+  onSearchChange,
+}) => {
   return (
     <FilterContainer>
       <SearchInput
@@ -81,4 +115,4 @@ const BlogFilter = ({ categories, selectedCategory, onCategoryChange, searchQuer
   );
 };
 
-export default BlogFilter; 
+export default BlogFilter;
