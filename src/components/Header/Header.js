@@ -35,12 +35,17 @@ const Header = () => (
       </li>
       <li>
         <NavLink href="#skillsRadar" as={Link}>
-        Skills
+          Skills
         </NavLink>
       </li>
       <li>
         <NavLink href="#journey" as={Link}>
-          Jurney
+          Journey
+        </NavLink>
+      </li>
+      <li>
+        <NavLink href="/blog" as={Link}>
+          Blog
         </NavLink>
       </li>
       <li>
@@ -48,8 +53,6 @@ const Header = () => (
           About
         </NavLink>
       </li>
-
-
     </Div2>
     <Div3>
       <SocialIcons href="https://github.com/luigiPinna">

@@ -54,8 +54,8 @@ const ContentCard = styled(motion.div)`
   background: ${props => props.theme.colors.background2};
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  border: 1px solid ${props => props.active ? '#3b82f6' : 'rgba(255, 255, 255, 0.1)'};
-  transform: ${props => props.active ? 'scale(1.05)' : 'scale(1)'};
+  border: 1px solid ${props => props.$active ? '#3b82f6' : 'rgba(255, 255, 255, 0.1)'};
+  transform: ${props => props.$active ? 'scale(1.05)' : 'scale(1)'};
   transition: all 0.3s ease;
 
   &:hover {
@@ -171,7 +171,7 @@ const ProfessionalJourney = () => {
               >
                 <TimelineDot type={item.type} side="left" />
                 <ContentCard
-                  active={activeYear === item.year}
+                  $active={activeYear === item.year}
                   onClick={() => setActiveYear(activeYear === item.year ? null : item.year)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -208,7 +208,7 @@ const ProfessionalJourney = () => {
               >
                 <TimelineDot type={item.type} side="right" />
                 <ContentCard
-                  active={activeYear === item.year}
+                  $active={activeYear === item.year}
                   onClick={() => setActiveYear(activeYear === item.year ? null : item.year)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
