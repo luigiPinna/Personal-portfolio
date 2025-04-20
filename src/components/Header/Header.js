@@ -20,6 +20,7 @@ import {
   NavMenu,
   NavItem,
   NavbarBackdrop,
+  CloseButton,
 } from "./HeaderStyles";
 
 const Header = () => {
@@ -123,6 +124,9 @@ const Header = () => {
       </Div3>
       {/* Menu mobile */}
       <NavMenu isOpen={isOpen} onClick={(e) => e.stopPropagation()}>
+        <CloseButton onClick={closeMenu}>
+          <AiOutlineClose size="2.4rem" />
+        </CloseButton>
         <NavItem>
           <NavLink href="#projects" as={Link} onClick={closeMenu}>
             Projects
@@ -180,7 +184,6 @@ const Header = () => {
       </NavMenu>
       {/* Backdrop solo quando il menu è aperto */}
       {isOpen && <NavbarBackdrop onClick={closeMenu} />}
-      
     </Container>
   );
 };

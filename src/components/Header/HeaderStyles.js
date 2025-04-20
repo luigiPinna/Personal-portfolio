@@ -1,6 +1,20 @@
 import { IoIosArrowDropdown } from "react-icons/io";
 import styled from "styled-components";
 
+export const CloseButton = styled.div`
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  &:hover {
+    color: #fff;
+    transform: scale(1.1);
+  }
+`;
+
 export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
