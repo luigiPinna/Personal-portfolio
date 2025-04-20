@@ -13,25 +13,25 @@
   "posts": [
     {
       "id": 2,
-      "title": "Tailwind CSS: Il Framework CSS Utilitario che Sta Rivoluzionando il Web Design",
-      "excerpt": "Scopri come Tailwind CSS sta cambiando il modo in cui sviluppiamo interfacce utente, offrendo un approccio più efficiente e flessibile al design web.",
-      "content": "Tailwind CSS è un framework CSS utilitario che sta guadagnando sempre più popolarità nella comunità degli sviluppatori web. A differenza dei framework CSS tradizionali, Tailwind non fornisce componenti predefiniti ma offre un set di classi atomiche che possono essere combinate per creare design personalizzati...",
-      "date": "2024-03-15",
+      "title": "Intelligenza Artificiale nel Business: Opportunità e Sfide per le PMI",
+      "excerpt": "Come le piccole e medie imprese possono sfruttare l'AI per competere con le grandi aziende e quali sfide devono affrontare in questo processo di trasformazione digitale.",
+      "content": "L'adozione dell'intelligenza artificiale non è più un'opzione riservata solo alle grandi corporation con budget illimitati. Anche le piccole e medie imprese oggi possono sfruttare strumenti basati sull'AI per ottimizzare i processi e migliorare l'efficienza operativa.\n\nLe soluzioni pronte all'uso e gli strumenti .\n\nWork in progress...",
+      "date": "2024-04-05",
       "author": "Luigi Pinna",
-      "category": "AI",
-      "image": "https://placehold.co/800x600/1a1a1a/ffffff?text=Tailwind",
-      "slug": "tailwind-css-framework-css-utilitario"
+      "category": "Tecnologia",
+      "image": "https://placehold.co/800x600/1a1a1a/ffffff?text=AI+Business",
+      "slug": "intelligenza-artificiale-business-pmi"
     },
     {
       "id": 3,
-      "title": "React Hooks: Una Guida Pratica per Sviluppatori Moderni",
-      "excerpt": "Impara come utilizzare gli Hooks di React per gestire lo stato e gli effetti collaterali nelle tue applicazioni in modo più elegante ed efficiente.",
-      "content": "Gli Hooks sono stati introdotti in React 16.8 per permettere l'uso dello stato e di altre funzionalità di React senza scrivere una classe. In questo articolo, esploreremo i principali Hooks e come utilizzarli efficacemente...",
-      "date": "2024-03-10",
+      "title": "Sostenibilità Digitale: Come Ridurre l'Impatto Ambientale della Tecnologia",
+      "excerpt": "Strategie e pratiche concrete per rendere più sostenibile la nostra presenza digitale, dal green hosting alla progettazione di software energeticamente efficienti.",
+      "content": "La transizione digitale è spesso considerata ...\n\nWork in progress...",
+      "date": "2024-04-10",
       "author": "Luigi Pinna",
-      "category": "React",
-      "image": "https://placehold.co/800x600/1a1a1a/ffffff?text=React+Hooks",
-      "slug": "react-hooks-guida-pratica"
+      "category": "Sostenibilità",
+      "image": "https://placehold.co/800x600/1a1a1a/ffffff?text=Digital+Sustainability",
+      "slug": "sostenibilita-digitale-impatto-ambientale"
     }
   ]
-} 
+}
