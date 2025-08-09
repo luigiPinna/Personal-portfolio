@@ -4,16 +4,15 @@
       "category": "Backend Development",
       "skills": [
         { "name": "Python/FastAPI", "level": 95 },
-        { "name": "Java/Spring", "level": 85 },
         { "name": "PostgreSQL", "level": 90 },
-        { "name": "REST APIs", "level": 95 }
+        { "name": "REST APIs", "level": 95 },
+        { "name": "Java/Spring", "level": 70 }
       ]
     },
     {
       "category": "Frontend Development",
       "skills": [
-        { "name": "React", "level": 90 },
-        { "name": "Angular", "level": 85 },
+        { "name": "React", "level": 85 },
         { "name": "TypeScript", "level": 85 }
       ]
     },
@@ -21,16 +20,22 @@
       "category": "AI & Automation",
       "skills": [
         { "name": "OpenAI Integration", "level": 90 },
-        { "name": "Azure AI", "level": 85 },
-        { "name": "UiPath RPA", "level": 80 }
+        { "name": "Azure AI", "level": 75 },
+        { "name": "Anthropic", "level": 85 }
       ]
     },
     {
       "category": "Data & Analytics",
       "skills": [
-        { "name": "Pandas/NumPy", "level": 85 },
-        { "name": "Data Modeling", "level": 90 },
-        { "name": "Big Data Analytics", "level": 85 }
+        { "name": "Pandas/NumPy", "level": 80 },
+        { "name": "Data Modeling", "level": 90 }
+      ]
+    },
+    {
+      "category": "DevOps & Cloud",
+      "skills": [
+        { "name": "Docker", "level": 90 },
+        { "name": "CICD", "level": 95 }
       ]
     }
   ]
