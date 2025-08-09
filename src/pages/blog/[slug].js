@@ -118,7 +118,6 @@ const PostMeta = styled.div`
     }
   }
 `;
-
 const PostBody = styled.div`
   color: ${(props) => props.theme.colors.primary2};
   font-size: 1.8rem;
@@ -127,6 +126,17 @@ const PostBody = styled.div`
 
   p {
     margin-bottom: 3rem;
+  }
+
+  // Aggiungi stili per i link
+  a {
+    color: ${(props) => props.theme.colors.primary1};
+    text-decoration: underline;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: ${(props) => props.theme.colors.primary2};
+    }
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
@@ -182,9 +192,6 @@ const BlogPost = ({ post }) => {
     day: "numeric",
   });
 
-  // Spezza il contenuto in paragrafi
-  const paragraphs = post.content.split("\n\n");
-
   return (
     <Layout>
       <PostContainer>
@@ -225,11 +232,7 @@ const BlogPost = ({ post }) => {
               <span>•</span>
               <span>{post.author}</span>
             </PostMeta>
-            <PostBody>
-              {paragraphs.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
-            </PostBody>
+            <PostBody dangerouslySetInnerHTML={{ __html: post.content }} />
           </PostContent>
         </PostWrapper>
       </PostContainer>
