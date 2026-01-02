@@ -17,12 +17,10 @@ const Hero = (props) => (
       <PersonalPhoto />
 
       <SectionText>
-
       I’m a Software Engineer who enjoys building web and software applications and integrating AI into real-world products.
 
-I mainly work with FastAPI, React, and OpenAI, focusing on scalable and well-structured solutions. I like keeping things simple, pragmatic, and aligned with actual business goals.
-
-I care about writing clean code, understanding the problem behind the feature, and delivering software that truly adds value.
+      I mainly work with FastAPI, React, and OpenAI, focusing on scalable and well-structured solutions. <br />
+      I like keeping things simple, pragmatic, and aligned with actual business goals. <br />
       </SectionText>
       <Button onClick={props.handleClick}>
         <a href="mailto:luigipinna3@gmail.com">Contact me </a>
