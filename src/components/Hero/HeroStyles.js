@@ -1,57 +1,98 @@
 import styled from 'styled-components';
 
-export const PersonalPhoto = styled.div` 
-  border-radius: 50%;
-  top: 8.5%;
-  margin-left: 75%;
-  height: 100px;
-  width: 100px;
-  position: absolute;
-  display: grid;
-  flex-direction: column;
-  background-image: url("images/me3.png");
-  background-size: 180px;
-  background-position-x: center;
-  background-position-y: 170px;
-  box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
-
-  @media only screen and (max-width: 1000px){
-    background-image: none;
-    box-shadow: none;
-  }
-  
-  @media ${(props) => props.theme.breakpoints.sm} {
-    display: flex;
-    flex-direction: column;
-    background-image: none;
-  
-  }
-  @media ${(props) => props.theme.breakpoints.md} {   
-    display: flex;
-    flex-direction: column;
-    background-image: none;
-    margin-left:30%;
-    
-  }
-`
 export const LeftSection = styled.div`
   width: 100%;
+  flex: 1;
+  padding-right: 3rem;
+
   a:link {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.91);    
+    color: rgba(255, 255, 255, 0.91);
+  }
+
+  @media ${(props) => props.theme.breakpoints.lg} {
+    padding-right: 0;
+    margin-bottom: 2rem;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-
-    margin: 0 auto;
-  }
-  @media ${(props) => props.theme.breakpoints.md} {
     width: 100%;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    padding-right: 0;
   }
+`;
+
+export const RightSection = styled.div`
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  @media ${(props) => props.theme.breakpoints.lg} {
+    width: 100%;
+    margin-top: 2rem;
+    display: none;
+  }
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    display: none;
+  }
+`;
+
+export const ProfileImage = styled.img`
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid ${props => props.theme.colors.accent1};
+  box-shadow:
+    0 0 0 8px ${props => props.theme.colors.background2},
+    0 20px 60px rgba(139, 92, 246, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow:
+      0 0 0 8px ${props => props.theme.colors.background2},
+      0 25px 80px rgba(139, 92, 246, 0.5);
+  }
+
+  @media ${(props) => props.theme.breakpoints.xl} {
+    width: 250px;
+    height: 250px;
+  }
+
+  @media ${(props) => props.theme.breakpoints.lg} {
+    width: 200px;
+    height: 200px;
+  }
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+
+  button {
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+`;
+
+// Manteniamo PersonalPhoto per retrocompatibilità ma deprecato
+export const PersonalPhoto = styled.div`
+  display: none;
 `;

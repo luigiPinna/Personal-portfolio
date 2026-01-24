@@ -9,6 +9,7 @@ import {
   AiOutlineClose,
 } from "react-icons/ai";
 import { DiCssdeck } from "react-icons/di";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 import {
   Container,
@@ -22,6 +23,7 @@ import {
   NavItem,
   NavbarBackdrop,
   CloseButton,
+  NavLinkWrapper,
 } from "./HeaderStyles";
 
 const Header = () => {
@@ -94,56 +96,69 @@ const Header = () => {
       {/* Menu per desktop */}
       <Div2>
         <NavItem>
-          <NavLink
-            href="#projects"
-            onClick={(e) => handleNavigation(e, "#projects")}
-          >
-            Projects
-          </NavLink>
+          <NavLinkWrapper>
+            <NavLink
+              href="#projects"
+              onClick={(e) => handleNavigation(e, "#projects")}
+            >
+              Projects
+            </NavLink>
+          </NavLinkWrapper>
         </NavItem>
         <NavItem>
-          <NavLink href="#tech" onClick={(e) => handleNavigation(e, "#tech")}>
-            Technologies
-          </NavLink>
+          <NavLinkWrapper>
+            <NavLink href="#tech" onClick={(e) => handleNavigation(e, "#tech")}>
+              Technologies
+            </NavLink>
+          </NavLinkWrapper>
         </NavItem>
         <NavItem>
-          <NavLink
-            href="#skillsRadar"
-            onClick={(e) => handleNavigation(e, "#skillsRadar")}
-          >
-            Skills
-          </NavLink>
+          <NavLinkWrapper>
+            <NavLink
+              href="#skillsRadar"
+              onClick={(e) => handleNavigation(e, "#skillsRadar")}
+            >
+              Skills
+            </NavLink>
+          </NavLinkWrapper>
         </NavItem>
         <NavItem>
-          <NavLink
-            href="#journey"
-            onClick={(e) => handleNavigation(e, "#journey")}
-          >
-            Journey
-          </NavLink>
+          <NavLinkWrapper>
+            <NavLink
+              href="#journey"
+              onClick={(e) => handleNavigation(e, "#journey")}
+            >
+              Journey
+            </NavLink>
+          </NavLinkWrapper>
         </NavItem>
         <NavItem>
-          <NavLink href="/blog" as={Link} onClick={closeMenu}>
-            Blog
-          </NavLink>
+          <NavLinkWrapper>
+            <NavLink href="/blog" as={Link} onClick={closeMenu}>
+              Blog
+            </NavLink>
+          </NavLinkWrapper>
         </NavItem>
         <NavItem>
-          <NavLink href="#about" onClick={(e) => handleNavigation(e, "#about")}>
-            About
-          </NavLink>
+          <NavLinkWrapper>
+            <NavLink href="#about" onClick={(e) => handleNavigation(e, "#about")}>
+              About
+            </NavLink>
+          </NavLinkWrapper>
         </NavItem>
       </Div2>
 
       <Div3>
-        <SocialIcons href="https://github.com/luigiPinna">
+        <SocialIcons href="https://github.com/luigiPinna" target="_blank" rel="noopener noreferrer">
           <AiFillGithub size="3rem" />
         </SocialIcons>
-        <SocialIcons href="https://www.linkedin.com/in/luigi-pinna-7a651656/">
+        <SocialIcons href="https://www.linkedin.com/in/luigi-pinna-7a651656/" target="_blank" rel="noopener noreferrer">
           <AiFillLinkedin size="3rem" />
         </SocialIcons>
-        <SocialIcons href="https://www.instagram.com/reallurby/">
+        <SocialIcons href="https://www.instagram.com/reallurby/" target="_blank" rel="noopener noreferrer">
           <AiFillInstagram size="3rem" />
         </SocialIcons>
+        <ThemeToggle />
         {/* Icona del menu mobile */}
         <MobileIcon onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? (

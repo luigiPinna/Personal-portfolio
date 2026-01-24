@@ -18,8 +18,10 @@ const TimelineLine = styled.div`
   left: 50%;
   transform: translateX(-50%);
   height: 100%;
-  width: 2px;
-  background: linear-gradient(to bottom, #3b82f6, #8b5cf6, #10b981);
+  width: 3px;
+  background: linear-gradient(to bottom, #8b5cf6, #06b6d4, #10b981);
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
 `;
 
 const TimelineSide = styled.div`
@@ -37,29 +39,40 @@ const TimelineItem = styled(motion.div)`
 
 const TimelineDot = styled.div`
   position: absolute;
-  ${props => props.side === 'left' ? 'right: -2.5rem;' : 'left: -2.5rem;'}
+  ${props => props.side === 'left' ? 'right: -2.8rem;' : 'left: -2.8rem;'}
   top: 50%;
   transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  background: ${props => props.type === 'work' ? '#3b82f6' : '#10b981'};
+  background: ${props => props.type === 'work' ? 'linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%)' : 'linear-gradient(135deg, #06b6d4 0%, #10b981 100%)'};
   z-index: 1;
+  border: 3px solid ${props => props.theme.colors.background1};
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+  animation: pulse 2s infinite;
+
+  @keyframes pulse {
+    0%, 100% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.1); }
+  }
 `;
 
 const ContentCard = styled(motion.div)`
   width: 100%;
   padding: 2rem;
-  border-radius: 1rem;
+  border-radius: 16px;
   background: ${props => props.theme.colors.background2};
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid ${props => props.$active ? props.theme.colors.accent1 : props.theme.colors.border};
+  backdrop-filter: blur(10px);
   cursor: pointer;
-  border: 1px solid ${props => props.$active ? '#3b82f6' : 'rgba(255, 255, 255, 0.1)'};
   transform: ${props => props.$active ? 'scale(1.05)' : 'scale(1)'};
   transition: all 0.3s ease;
+  box-shadow: ${props => props.$active ? '0 20px 60px rgba(139, 92, 246, 0.3)' : '0 4px 6px rgba(0, 0, 0, 0.1)'};
 
   &:hover {
     transform: scale(1.02);
+    border-color: ${props => props.theme.colors.accent1};
+    box-shadow: 0 12px 40px rgba(139, 92, 246, 0.2);
   }
 `;
 
@@ -78,35 +91,40 @@ const TitleText = styled.span`
 
 const YearBadge = styled.span`
   padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  background: rgba(59, 130, 246, 0.2);
-  color: #3b82f6;
-  font-weight: 600;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
 `;
 
 const Description = styled.p`
-  color: ${props => props.theme.colors.primary1};
+  color: ${props => props.theme.colors.textSecondary};
   margin-bottom: 1rem;
-  line-height: 1.6;
+  line-height: 1.8;
+  font-size: 1.4rem;
 `;
 
 const TechContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.8rem;
 `;
 
 const TechTag = styled(motion.span)`
   padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background: ${props => props.theme.colors.background3};
   color: ${props => props.theme.colors.primary1};
-  font-size: 0.875rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 1px solid ${props => props.theme.colors.accent2 + '30'};
   transition: all 0.2s ease;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: ${props => props.theme.colors.accent2 + '20'};
+    border-color: ${props => props.theme.colors.accent2};
   }
 `;
 
@@ -152,9 +170,8 @@ const ProfessionalJourney = () => {
 
   return (
     <Section nopadding id="journey">
-   
       <SectionDivider divider/>
-        <SectionTitle>Professional Journey</SectionTitle>
+      <SectionTitle className="gradient-text">Professional Journey</SectionTitle>
         
         <TimelineContainer
           variants={containerVariants}

@@ -31,10 +31,15 @@ export const Container = styled.div`
   margin: 0 auto;
   z-index: 1000;
   background-color: ${(props) =>
-    props.scrolled ? "rgba(20, 20, 20, 0.9)" : "transparent"};
-  backdrop-filter: blur(10px);
+    props.scrolled
+      ? props.theme.colors.background1 + "e6"
+      : props.theme.colors.background1 + "80"};
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid ${(props) => props.theme.colors.border};
   transition: all 0.3s ease;
   height: 70px;
+  box-shadow: ${(props) =>
+    props.scrolled ? "0 8px 32px rgba(0, 0, 0, 0.1)" : "none"};
 
   @media ${(props) => props.theme.breakpoints.sm} {
     grid-template-columns: 1fr 1fr;
@@ -79,23 +84,44 @@ export const Div3 = styled.div`
   }
 `;
 
+export const NavLinkWrapper = styled.div`
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+`;
+
 export const NavLink = styled.a`
-  font-size: 2rem;
+  font-size: 1.6rem;
   line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
-  transition: 0.4s ease;
-  padding: 0 1rem;
+  color: ${(props) => props.theme.colors.primary1};
+  transition: 0.3s ease;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: 500;
 
   &:hover {
-    transform: scale(1.05);
-    color: #28c3d7;
-    opacity: 1;
+    color: ${(props) => props.theme.colors.accent1};
     cursor: pointer;
   }
 
   @media ${(props) => props.theme.breakpoints.md} {
     padding: 0.5rem;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
@@ -107,6 +133,8 @@ export const NavLink = styled.a`
 `;
 
 export const NavItem = styled.li`
+  list-style: none;
+
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
     margin-bottom: 1rem;
@@ -154,7 +182,7 @@ export const NavbarBackdrop = styled.div`
 // Menu mobile
 export const NavMenu = styled.ul`
   display: none;
-  
+
   @media ${(props) => props.theme.breakpoints.sm} {
     display: flex;
     flex-direction: column;
@@ -163,14 +191,17 @@ export const NavMenu = styled.ul`
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #0f0f0f;
+    height: 100vh;
+    background: ${(props) => props.theme.colors.background1};
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid ${(props) => props.theme.colors.border};
     padding: 6rem 1.5rem 2rem;
     overflow-y: auto;
     transition: all 0.3s ease;
     z-index: 1000;
     transform: ${({ isOpen }) => (isOpen ? 'translateY(0)' : 'translateY(-100%)')};
     animation: ${({ isOpen }) => (isOpen ? 'slideDown 0.3s ease' : 'none')};
-    
+
     @keyframes slideDown {
       from { transform: translateY(-100%); }
       to { transform: translateY(0); }
@@ -180,15 +211,20 @@ export const NavMenu = styled.ul`
 
 // Social Icons
 export const SocialIcons = styled.a`
-  transition: 0.3s ease;
-  color: white;
-  border-radius: 50px;
+  transition: all 0.3s ease;
+  color: ${(props) => props.theme.colors.primary1};
+  border-radius: 50%;
   padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
-    background-color: #212d45;
-    transform: scale(1.2);
+    background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+    color: white;
+    transform: scale(1.1);
     cursor: pointer;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {

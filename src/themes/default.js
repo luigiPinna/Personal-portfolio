@@ -1,22 +1,51 @@
-export default {
-  // Temp fonts
+export const darkTheme = {
   fonts: {
-    title: "Poppins Grotesk, sans-serif",
-    main: "Poppins Grotesk, sans-serif"
+    title: "Poppins, sans-serif",
+    main: "Poppins, sans-serif"
   },
-  // Colors for layout
   colors: {
-    primary1: "hsl(204,23.8%,95.9%)",
-    background1: "#201f1f", /* Before changes: #0F1624*/
-    accent1: "hsl(34.9,98.6%,72.9%)",
-    button: "hsl(205.1,100%,36.1%)",
-    background2: "hsl(232.7,27.3%,23.7%)",
+    primary1: "#e4e4e7",
+    background1: "#0a0a0f",
+    background2: "#16161f",
+    background3: "#1f1f2e",
+    accent1: "#8b5cf6",
+    accent2: "#06b6d4",
+    button: "#8b5cf6",
+    border: "rgba(255, 255, 255, 0.1)",
+    text: "#e4e4e7",
+    textSecondary: "#a1a1aa"
   },
-  // Breakpoints for responsive design
   breakpoints: {
     sm: 'screen and (max-width: 640px)',
     md: 'screen and (max-width: 768px)',
     lg: 'screen and (max-width: 1024px)',
     xl: 'screen and (max-width: 1280px)'
   },
-}
+};
+
+export const lightTheme = {
+  fonts: {
+    title: "Poppins, sans-serif",
+    main: "Poppins, sans-serif"
+  },
+  colors: {
+    primary1: "#18181b",
+    background1: "#ffffff",
+    background2: "#f9fafb",
+    background3: "#f3f4f6",
+    accent1: "#8b5cf6",
+    accent2: "#06b6d4",
+    button: "#8b5cf6",
+    border: "rgba(0, 0, 0, 0.1)",
+    text: "#18181b",
+    textSecondary: "#52525b"
+  },
+  breakpoints: {
+    sm: 'screen and (max-width: 640px)',
+    md: 'screen and (max-width: 768px)',
+    lg: 'screen and (max-width: 1024px)',
+    xl: 'screen and (max-width: 1280px)'
+  },
+};
+
+export default darkTheme;

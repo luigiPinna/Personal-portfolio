@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+
+/* Custom CSS classes */
+.gradient-text {
+  background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.gradient-primary {
+  background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+}
+
+/* CSS Variables per theme switching */
+:root {
+  --bg-primary: 255 255 255;
+  --bg-secondary: 249 250 251;
+  --text-primary: 24 24 27;
+  --text-secondary: 82 82 91;
+}
+
+.dark {
+  --bg-primary: 10 10 15;
+  --bg-secondary: 22 22 31;
+  --text-primary: 228 228 231;
+  --text-secondary: 161 161 170;
+}

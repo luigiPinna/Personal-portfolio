@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.25.0",
+    "@tailwindcss/postcss": "^4.1.18",
     "chart.js": "^4.4.1",
     "firebase": "^9.6.1",
     "framer-motion": "^12.6.2",
@@ -23,7 +24,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
-    "autoprefixer": "^10.4.21",
+    "autoprefixer": "^10.4.23",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.0.17"
   }

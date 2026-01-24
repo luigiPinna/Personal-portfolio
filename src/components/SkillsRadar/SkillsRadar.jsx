@@ -9,12 +9,16 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import { useTheme as useStyledTheme } from 'styled-components';
+import { useTheme } from '../../contexts/ThemeContext';
 import skillsData from '../../constants/skillsData.json';
 import {
     Section,
     SectionDivider,
     SectionTitle,
   } from "../../styles/GlobalComponents";
+import { ScrollReveal } from '../../animations/ScrollAnimations';
+import { fadeInUp, scaleIn } from '../../animations/variants';
 
 ChartJS.register(
   RadialLinearScale,
@@ -26,19 +30,27 @@ ChartJS.register(
 );
 
 const SkillsRadar = () => {
+  const styledTheme = useStyledTheme();
+  const { theme } = useTheme();
+  const isDark = theme === 'dark' || (theme === 'system' && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
   const data = {
-    labels: skillsData.skills.flatMap(category => 
+    labels: skillsData.skills.flatMap(category =>
       category.skills.map(skill => skill.name)
     ),
     datasets: [
       {
         label: 'Technical Skills',
-        data: skillsData.skills.flatMap(category => 
+        data: skillsData.skills.flatMap(category =>
           category.skills.map(skill => skill.level)
         ),
-        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-        borderColor: 'rgba(54, 162, 235, 1)',
+        backgroundColor: 'rgba(139, 92, 246, 0.2)',
+        borderColor: '#8b5cf6',
         borderWidth: 2,
+        pointBackgroundColor: '#8b5cf6',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#06b6d4',
+        pointHoverBorderColor: '#8b5cf6',
       },
     ],
   };
@@ -50,15 +62,21 @@ const SkillsRadar = () => {
         max: 100,
         ticks: {
           stepSize: 20,
+          color: isDark ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)',
+          backdropColor: 'transparent',
         },
         grid: {
-          color: 'rgba(255, 255, 255, 0.1)',
+          color: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
         },
         angleLines: {
-          color: 'rgba(255, 255, 255, 0.1)',
+          color: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
         },
         pointLabels: {
-          color: 'rgba(255, 255, 255, 0.8)',
+          color: isDark ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.9)',
+          font: {
+            size: 14,
+            weight: '500',
+          },
         },
       },
     },
@@ -66,18 +84,33 @@ const SkillsRadar = () => {
       legend: {
         display: false,
       },
+      tooltip: {
+        backgroundColor: isDark ? 'rgba(22, 22, 31, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+        titleColor: isDark ? '#e4e4e7' : '#18181b',
+        bodyColor: isDark ? '#a1a1aa' : '#52525b',
+        borderColor: '#8b5cf6',
+        borderWidth: 1,
+        padding: 12,
+        displayColors: false,
+      },
     },
+    maintainAspectRatio: true,
+    responsive: true,
   };
 
   return (
     <Section nopadding id="skillsRadar">
-    <SectionDivider />
-    <SectionTitle main>Technical Expertise</SectionTitle>
-    <div className="w-full max-w-4xl mx-auto p-6">
-      <div className="bg-gray-800 rounded-lg p-6">
-        <Radar data={data} options={options} />
-      </div>
-    </div>
+      <SectionDivider />
+      <ScrollReveal variants={fadeInUp}>
+        <SectionTitle main className="gradient-text">Technical Expertise</SectionTitle>
+      </ScrollReveal>
+      <ScrollReveal variants={scaleIn}>
+        <div style={{ width: '100%', maxWidth: '900px', margin: '0 auto', padding: '2rem' }}>
+          <div className="glass-dark dark:glass-dark" style={{ borderRadius: '16px', padding: '3rem', border: `1px solid ${styledTheme.colors.border}` }}>
+            <Radar data={data} options={options} />
+          </div>
+        </div>
+      </ScrollReveal>
     </Section>
   );
 };

@@ -64,37 +64,34 @@ export const SectionTitle = styled.h2`
 
 export const SectionText = styled.p`
   max-width: 800px;
-  font-size: 24px;
-  line-height: 40px;
+  font-size: 2rem;
+  line-height: 1.8;
   font-weight: 300;
   padding-bottom: 3.6rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: ${(props) => props.theme.colors.textSecondary};
 
   @media ${(props) => props.theme.breakpoints.md} {
     max-width: 670px;
-    font-size: 20px;
-    line-height: 32px;
+    font-size: 1.8rem;
     padding-bottom: 24px;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1.4rem;
+    line-height: 1.6;
     padding-bottom: 16px;
   }
 `
 
 export const SectionDivider = styled.div`
-
   width: 64px;
   height: 6px;
   border-radius: 10px;
-  background-color: #fff;
-  background: ${(props) => props.colorAlt ? 
-    'linear-gradient(270deg, #F46737 0%, #945DD6 100%)' :
-    'linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)'};
-
-    margin: ${(props) => props.divider ? "4rem 0" : "" };
+  background: ${(props) => props.colorAlt ?
+    'linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%)' :
+    'linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%)'};
+  margin: ${(props) => props.divider ? "4rem 0" : "" };
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
 
   @media ${(props) => props.theme.breakpoints.md} {
     width: 48px;
@@ -109,19 +106,18 @@ export const SectionDivider = styled.div`
 export const SectionSubText = styled.p`
   max-width: 800px;
   font-weight: 300;
-  font-size: 18px;
-  line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: ${(props) => props.theme.colors.textSecondary};
 
-@media ${(props) => props.theme.breakpoints.md} {
+  @media ${(props) => props.theme.breakpoints.md} {
     max-width: 672px;
-    font-size: 16px;
-    line-height: 25px;
+    font-size: 1.4rem;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 1.2rem;
+    line-height: 1.6;
   }
 `
 export const SecondaryBtn = styled.button`

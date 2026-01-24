@@ -62,55 +62,86 @@ export const ListContainer = styled.div`
 
 export const ListTitle = styled.h4`
   font-weight: 700;
-  font-size: 28px;
-  line-height: 32px;
-  letter-spacing: 0.02em;
-  color: #FFFFFF;
-  margin-bottom: 8px;
-
-@media ${props => props.theme.breakpoints.md}{
-  font-size: 24px;
-  line-height: 28px;
-}
-
-@media ${props => props.theme.breakpoints.sm}{
-  font-size: 20px;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-  margin-bottom: 4px;
-}
-`
-
-export const ListParagraph = styled.p`
-  font-size: 18px;
-  line-height: 30px;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 2.4rem;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  color: ${props => props.theme.colors.primary1};
+  margin-bottom: 1rem;
 
   @media ${props => props.theme.breakpoints.md}{
-    font-size: 16px;
-    line-height: 28px;
+    font-size: 2rem;
   }
 
   @media ${props => props.theme.breakpoints.sm}{
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 1.8rem;
+  }
+`;
+
+export const ListParagraph = styled.p`
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: ${props => props.theme.colors.textSecondary};
+
+  @media ${props => props.theme.breakpoints.md}{
+    font-size: 1.4rem;
+  }
+
+  @media ${props => props.theme.breakpoints.sm}{
+    font-size: 1.3rem;
+    line-height: 1.6;
   }
 `
 
 export const ListItem = styled.li`
-  max-width: 320px;
+  max-width: 380px;
   display: flex;
   flex-direction: column;
+  padding: 2rem;
+  border-radius: 16px;
+  background: ${props => props.theme.colors.background2};
+  border: 1px solid ${props => props.theme.colors.border};
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 
-@media ${props => props.theme.breakpoints.md}{
-  max-width: 203px;
-}
+  &:hover {
+    transform: translateY(-8px);
+    border-color: ${props => props.theme.colors.accent1};
+    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+  }
 
-@media ${props => props.theme.breakpoints.sm}{
-  margin-bottom: 14px;
-  max-width: 320px;
-  flex-direction: row;
-}
+  @media ${props => props.theme.breakpoints.md}{
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  @media ${props => props.theme.breakpoints.sm}{
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+    flex-direction: column;
+  }
+`;
+
+export const IconWrapper = styled.div`
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  color: white;
+  transition: all 0.3s ease;
+
+  ${ListItem}:hover & {
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  @media ${props => props.theme.breakpoints.sm}{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+  }
 `
 
 export const ListIcon = styled.img`

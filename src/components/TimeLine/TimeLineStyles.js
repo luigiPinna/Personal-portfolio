@@ -3,12 +3,14 @@ import styled from 'styled-components'
 
 export const CarouselContainer = styled.ul`
   max-width: 1040px;
-  background: #201f1f;  /*before changes: #0F1624*/ 
-  padding: 0rem;
-  list-style:none;
+  background: ${props => props.theme.colors.background2};
+  border: 1px solid ${props => props.theme.colors.border};
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  list-style: none;
   display: flex;
-  justify-content: space-between; 
-  /* overflow-x: hidden; */
+  justify-content: space-between;
 
   margin-left: 32px;
   &:first-of-type{
@@ -18,7 +20,7 @@ export const CarouselContainer = styled.ul`
   margin-bottom: 80px;
 
   //remove scrollbar
-  scrollbar-width: none;  
+  scrollbar-width: none;
    &::-webkit-scrollbar {
      display: none;
    }
@@ -30,6 +32,7 @@ export const CarouselContainer = styled.ul`
     touch-action: pan-x;
     justify-content: initial;
     margin-bottom: 8px;
+    padding: 1.5rem;
   }
 `
 export const CarouselMobileScrollNode = styled.div`
@@ -40,52 +43,57 @@ export const CarouselMobileScrollNode = styled.div`
 `
 
 export const CarouselItem = styled.div`
-  background: #201f1f;  /*before changes: #0F1624*/
-  border-radius: 3px;
+  background: transparent;
+  border-radius: 8px;
   max-width: 196px;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: ${props => props.theme.colors.background3};
+  }
 
   @media ${props => props.theme.breakpoints.md} {
     max-width: 124px;
   }
-  
+
   @media ${props => props.theme.breakpoints.sm} {
     margin-left: 32px;
     min-width: 120px;
     min-height: 70px;
-    background: #201f1f;
-    padding: 4px;
+    background: ${props => props.theme.colors.background2};
+    padding: 8px;
     align-content: start;
     scroll-snap-align: start;
-    border-radius: 3px;
+    border-radius: 8px;
     overflow: visible;
     position: relative;
     height: fit-content;
-    
-    ${(props) => props.active === props.index ? `opacity: 1` : `opacity: 0.5`}; 
+
+    ${(props) => props.active === props.index ? `opacity: 1; border: 1px solid ${props.theme.colors.accent1};` : `opacity: 0.5; border: 1px solid ${props.theme.colors.border};`};
   }
-`
+`;
 
 export const CarouselItemTitle = styled.h4`
   font-weight: bold;
-  font-size: 26px;
-  line-height: 32px;
-  letter-spacing: 0.02em;
+  font-size: 2.6rem;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
   display: flex;
-  /* This gradient is different due to the size of the Title container, it must transition sooner to be visible on the text */
-  background: linear-gradient(121.57deg, #FFFFFF 10%, rgba(255, 255, 255, 0.66) 30.15%);
+  background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 8px;
+  background-clip: text;
+  margin-bottom: 1rem;
 
   @media ${props => props.theme.breakpoints.md} {
-    font-size: 20px;
-    line-height: 28px;
-    margin-bottom: 4px;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
   }
-  
+
   @media ${props => props.theme.breakpoints.sm} {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1.6rem;
   }
 `
 export const CarouselItemImg = styled.svg`
@@ -101,20 +109,19 @@ export const CarouselItemImg = styled.svg`
 `
 
 export const CarouselItemText = styled.p`
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 1.4rem;
+  line-height: 1.6;
   letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.75);
+  color: ${props => props.theme.colors.textSecondary};
   padding-right: 16px;
 
   @media ${props => props.theme.breakpoints.md} {
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 1.2rem;
     padding-right: 32px;
   }
   @media ${props => props.theme.breakpoints.sm} {
-    font-size: 10px;
-    line-height: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
     padding-right: 0;
   }
 `
@@ -148,10 +155,11 @@ export const CarouselButton = styled.button`
 `
 
 export const CarouselButtonDot = styled.div`
-  background-color: white;
+  background: ${(props) => props.active ? 'linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%)' : props.theme.colors.textSecondary};
   border-radius: 10px;
   margin: auto;
   width: 3px;
   height: 3px;
+  transition: all 0.3s ease;
 `
 
