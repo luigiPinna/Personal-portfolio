@@ -3,11 +3,42 @@ import styled from 'styled-components';
 export const LeftSection = styled.div`
   width: 100%;
   flex: 1;
-  padding-right: 3rem;
+  position: relative;
+  z-index: 1;
+
+  /* Foto come background dietro il titolo - effetto 3D */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background-image: url('/images/profile.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    opacity: 0.15;
+    filter: blur(2px);
+    z-index: -1;
+    pointer-events: none;
+
+    @media ${(props) => props.theme.breakpoints.lg} {
+      width: 300px;
+      height: 300px;
+      right: -50px;
+      top: -30px;
+      opacity: 0.1;
+    }
+
+    @media ${(props) => props.theme.breakpoints.md} {
+      display: none;
+    }
+  }
 
   a:link {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.91);
+    color: ${(props) => props.theme.colors.primary1};
   }
 
   @media ${(props) => props.theme.breakpoints.lg} {
@@ -24,73 +55,7 @@ export const LeftSection = styled.div`
   }
 `;
 
-export const RightSection = styled.div`
-  width: 40%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-
-  @media ${(props) => props.theme.breakpoints.lg} {
-    width: 100%;
-    margin-top: 2rem;
-    display: none;
-  }
-
-  @media ${(props) => props.theme.breakpoints.md} {
-    display: none;
-  }
-`;
-
-export const ProfileImage = styled.img`
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid ${props => props.theme.colors.accent1};
-  box-shadow:
-    0 0 0 8px ${props => props.theme.colors.background2},
-    0 20px 60px rgba(139, 92, 246, 0.3);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  position: relative;
-
-  &:hover {
-    transform: scale(1.05);
-    box-shadow:
-      0 0 0 8px ${props => props.theme.colors.background2},
-      0 25px 80px rgba(139, 92, 246, 0.5);
-  }
-
-  @media ${(props) => props.theme.breakpoints.xl} {
-    width: 250px;
-    height: 250px;
-  }
-
-  @media ${(props) => props.theme.breakpoints.lg} {
-    width: 200px;
-    height: 200px;
-  }
-`;
-
-export const ButtonWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 2rem;
-
-  button {
-    position: relative;
-    overflow: hidden;
-
-    &:hover {
-      transform: translateY(-2px);
-    }
-
-    &:active {
-      transform: translateY(0);
-    }
-  }
-`;
+// Rimossi RightSection, ProfileImage, ButtonWrapper che non servono più
 
 // Manteniamo PersonalPhoto per retrocompatibilità ma deprecato
 export const PersonalPhoto = styled.div`

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import Button from '../../styles/GlobalComponents/Button';
-import { LeftSection, RightSection, ProfileImage, ButtonWrapper } from './HeroStyles';
+import { LeftSection } from './HeroStyles';
 import { AiOutlineMessage } from "react-icons/ai";
 
 const Hero = (props) => {
@@ -55,40 +55,14 @@ const Hero = (props) => {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <ButtonWrapper>
-              <Button onClick={props.handleClick} className="group relative overflow-hidden">
-                <a href="mailto:luigipinna3@gmail.com" className="flex items-center">
-                  <span className="relative z-10">Contact me</span>
-                  <AiOutlineMessage
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      color: "white",
-                      marginLeft: "8px",
-                    }}
-                    className="relative z-10"
-                  />
-                </a>
-                <span className="absolute inset-0 gradient-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            <a href="mailto:luigipinna3@gmail.com" style={{ textDecoration: 'none' }}>
+              <Button>
+                Contact me <AiOutlineMessage size={20} style={{ marginLeft: '8px' }} />
               </Button>
-            </ButtonWrapper>
+            </a>
           </motion.div>
         </motion.div>
       </LeftSection>
-
-      <RightSection>
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="animate-float"
-        >
-          <ProfileImage
-            src="/images/me3.png"
-            alt="Luigi Pinna"
-          />
-        </motion.div>
-      </RightSection>
     </Section>
   );
 };
