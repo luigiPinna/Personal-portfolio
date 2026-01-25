@@ -13,9 +13,7 @@ import { Section } from "../styles/GlobalComponents";
 const Home = () => {
   return (
     <Layout>
-      <Section>
-        <Hero />
-      </Section>
+      <Hero />
       <Projects />
       <Technologies />
       <ProfessionalJourney />
