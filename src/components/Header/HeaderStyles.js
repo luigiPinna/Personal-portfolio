@@ -5,12 +5,12 @@ export const CloseButton = styled.div`
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  color: rgba(255, 255, 255, 0.75);
+  color: ${(props) => props.theme.colors.primary1};
   cursor: pointer;
   transition: 0.3s ease;
 
   &:hover {
-    color: #fff;
+    color: ${(props) => props.theme.colors.accent1};
     transform: scale(1.1);
   }
 `;
@@ -55,6 +55,11 @@ export const Div1 = styled.div`
   align-content: center;
   padding-left: 15px;
   font-family: sans-serif;
+  color: ${(props) => props.theme.colors.primary1};
+
+  a {
+    color: ${(props) => props.theme.colors.primary1};
+  }
 
   @media ${(props) => props.theme.breakpoints.sm} {
     grid-area: 1 / 1 / 1 / 2;
@@ -152,11 +157,11 @@ export const MobileIcon = styled.div`
     cursor: pointer;
     padding: 0.5rem;
     margin-left: 1rem;
-    color: rgba(255, 255, 255, 0.75);
+    color: ${(props) => props.theme.colors.primary1};
     transition: 0.3s ease;
 
     &:hover {
-      color: #fff;
+      color: ${(props) => props.theme.colors.accent1};
       transform: scale(1.1);
     }
   }
@@ -224,7 +229,7 @@ export const SocialIcons = styled.a`
     color: white;
     transform: scale(1.1);
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 4px 12px ${(props) => props.theme.colors.shadow};
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {

@@ -106,7 +106,7 @@ export const ListItem = styled.li`
   &:hover {
     transform: translateY(-8px);
     border-color: ${props => props.theme.colors.accent1};
-    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 20px 60px ${props => props.theme.colors.shadow};
   }
 
   @media ${props => props.theme.breakpoints.md}{

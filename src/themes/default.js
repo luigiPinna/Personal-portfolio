@@ -13,7 +13,8 @@ export const darkTheme = {
     button: "#8b5cf6",
     border: "rgba(255, 255, 255, 0.1)",
     text: "#e4e4e7",
-    textSecondary: "#a1a1aa"
+    textSecondary: "#a1a1aa",
+    shadow: "rgba(139, 92, 246, 0.3)"
   },
   breakpoints: {
     sm: 'screen and (max-width: 640px)',
@@ -38,7 +39,8 @@ export const lightTheme = {
     button: "#8b5cf6",
     border: "rgba(0, 0, 0, 0.1)",
     text: "#18181b",
-    textSecondary: "#52525b"
+    textSecondary: "#52525b",
+    shadow: "rgba(0, 0, 0, 0.2)"
   },
   breakpoints: {
     sm: 'screen and (max-width: 640px)',

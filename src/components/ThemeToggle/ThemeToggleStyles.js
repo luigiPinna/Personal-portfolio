@@ -20,7 +20,7 @@ export const ToggleButton = styled(motion.button)`
   &:hover {
     background: ${props => props.theme.colors.accent1};
     color: white;
-    box-shadow: 0 8px 16px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 8px 16px ${props => props.theme.colors.shadow};
     transform: scale(1.05);
   }
 

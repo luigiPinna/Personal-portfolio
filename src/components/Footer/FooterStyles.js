@@ -188,7 +188,7 @@ export const BackToTopButton = styled(motion.button)`
     background: ${props => props.theme.colors.accent1};
     color: white;
     border-color: ${props => props.theme.colors.accent1};
-    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 4px 12px ${props => props.theme.colors.shadow};
   }
 
   @media ${props => props.theme.breakpoints.sm} {

@@ -99,14 +99,14 @@ const SkillsRadar = () => {
   };
 
   return (
-    <Section nopadding id="skillsRadar">
+    <Section id="skillsRadar" style={{ padding: '4rem 2rem' }}>
       <SectionDivider />
       <ScrollReveal variants={fadeInUp}>
-        <SectionTitle main className="gradient-text">Technical Expertise</SectionTitle>
+        <SectionTitle main className="gradient-text" style={{ textAlign: 'center', width: '100%' }}>Technical Expertise</SectionTitle>
       </ScrollReveal>
       <ScrollReveal variants={scaleIn}>
-        <div style={{ width: '100%', maxWidth: '900px', margin: '0 auto', padding: '2rem' }}>
-          <div className="glass-dark dark:glass-dark" style={{ borderRadius: '16px', padding: '3rem', border: `1px solid ${styledTheme.colors.border}` }}>
+        <div style={{ width: '100%', maxWidth: '1000px', margin: '0 auto', padding: '2rem 0' }}>
+          <div className="glass-dark dark:glass-dark" style={{ borderRadius: '16px', padding: '4rem', border: `1px solid ${styledTheme.colors.border}` }}>
             <Radar data={data} options={options} />
           </div>
         </div>

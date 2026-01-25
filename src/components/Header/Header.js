@@ -87,7 +87,7 @@ const Header = () => {
       <Div1>
         <Link
           href="/"
-          style={{ display: "flex", alignItems: "center", color: "white" }}
+          style={{ display: "flex", alignItems: "center", textDecoration: "none" }}
         >
           <DiCssdeck size="3rem" /> <span>LP</span>
         </Link>

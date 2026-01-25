@@ -21,7 +21,7 @@ const TimelineLine = styled.div`
   width: 3px;
   background: linear-gradient(to bottom, #8b5cf6, #06b6d4, #10b981);
   border-radius: 2px;
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 0 20px ${props => props.theme.colors.shadow};
 `;
 
 const TimelineSide = styled.div`
@@ -48,7 +48,7 @@ const TimelineDot = styled.div`
   background: ${props => props.type === 'work' ? 'linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%)' : 'linear-gradient(135deg, #06b6d4 0%, #10b981 100%)'};
   z-index: 1;
   border: 3px solid ${props => props.theme.colors.background1};
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+  box-shadow: 0 4px 12px ${props => props.theme.colors.shadow};
   animation: pulse 2s infinite;
 
   @keyframes pulse {
@@ -67,12 +67,12 @@ const ContentCard = styled(motion.div)`
   cursor: pointer;
   transform: ${props => props.$active ? 'scale(1.05)' : 'scale(1)'};
   transition: all 0.3s ease;
-  box-shadow: ${props => props.$active ? '0 20px 60px rgba(139, 92, 246, 0.3)' : '0 4px 6px rgba(0, 0, 0, 0.1)'};
+  box-shadow: ${props => props.$active ? `0 20px 60px ${props.theme.colors.shadow}` : `0 4px 6px ${props.theme.colors.shadow}`};
 
   &:hover {
     transform: scale(1.02);
     border-color: ${props => props.theme.colors.accent1};
-    box-shadow: 0 12px 40px rgba(139, 92, 246, 0.2);
+    box-shadow: 0 12px 40px ${props => props.theme.colors.shadow};
   }
 `;
 
@@ -96,7 +96,7 @@ const YearBadge = styled.span`
   color: white;
   font-weight: 700;
   font-size: 1.3rem;
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 4px 12px ${props => props.theme.colors.shadow};
 `;
 
 const Description = styled.p`
