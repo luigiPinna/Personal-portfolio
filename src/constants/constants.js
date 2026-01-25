@@ -98,5 +98,6 @@ export const TimeLineData = [
   { year: 2021, text: 'Full Stack Developer professional certification at TheNetValue' },
   { year: 2021, text: 'Joined a startup as a Backend Developer' },
   { year: 2024, text: 'Became a Full Stack Developer' },
+  { year: 2026, text: 'Leading complex projects for major banking clients' },
 ];
 

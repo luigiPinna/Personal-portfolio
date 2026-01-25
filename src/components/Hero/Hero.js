@@ -6,6 +6,7 @@ import Button from '../../styles/GlobalComponents/Button';
 import { HeroContainer, LeftSection, RightSection, ProfileImage, HeroEffects, CodeLines } from './HeroStyles';
 import { AiOutlineMessage } from "react-icons/ai";
 
+
 const Hero = (props) => {
   const containerVariants = {
     hidden: { opacity: 0 },
