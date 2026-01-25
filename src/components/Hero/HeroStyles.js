@@ -9,38 +9,36 @@ export const HeroContainer = styled.div`
   padding: 6rem 4rem;
   display: grid;
   grid-template-columns: 1fr 400px;
-  gap: 6rem;
+  gap: 0;
   align-items: center;
 
   @media ${(props) => props.theme.breakpoints.lg} {
     grid-template-columns: 1fr 350px;
-    gap: 4rem;
+    gap: 0;
     padding: 5rem 3rem;
   }
 
   @media ${(props) => props.theme.breakpoints.md} {
     grid-template-columns: 1fr;
-    padding: 4rem 2rem;
-    gap: 3rem;
+    padding: 4rem 2rem 4rem 2rem;
+    gap: 0;
+    display: block;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    padding: 3rem 1.5rem;
-    gap: 2rem;
+    padding: 3rem 1.5rem 3rem 1.5rem;
   }
 `;
 
 export const LeftSection = styled.div`
   width: 100%;
   max-width: 700px;
+  position: relative;
+  z-index: 10;
 
   a:link {
     text-decoration: none;
     color: ${(props) => props.theme.colors.primary1};
-  }
-
-  @media ${(props) => props.theme.breakpoints.md} {
-    order: 2;
   }
 `;
 
@@ -50,7 +48,14 @@ export const RightSection = styled.div`
   justify-content: center;
 
   @media ${(props) => props.theme.breakpoints.md} {
-    order: 1;
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    top: 2rem;
+    right: 1rem;
   }
 `;
 
@@ -67,13 +72,15 @@ export const ProfileImage = styled.img`
   }
 
   @media ${(props) => props.theme.breakpoints.md} {
-    width: 250px;
-    height: 250px;
+    width: 180px;
+    height: 180px;
+    opacity: 0.6;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    width: 200px;
-    height: 200px;
+    width: 140px;
+    height: 140px;
+    opacity: 0.5;
   }
 `;
 
