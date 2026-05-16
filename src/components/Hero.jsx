@@ -4,6 +4,8 @@ import { meta } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import { useLocalTime, smoothTo } from '@/lib/hooks';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export default function Hero() {
   const time = useLocalTime();
 
@@ -18,7 +20,7 @@ export default function Hero() {
           <aside className="flex flex-row items-center gap-5 md:flex-col md:items-start md:gap-5 md:pt-1.5">
             <div className="group relative h-[88px] w-[88px] shrink-0 overflow-hidden rounded border border-line bg-bg-2 md:h-[140px] md:w-[140px]">
               <Image
-                src="/images/hero_img.png"
+                src={`${basePath}/images/hero_img.png`}
                 alt="Luigi Pinna"
                 fill
                 sizes="140px"
