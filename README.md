@@ -1,53 +1,56 @@
-# Luigi Pinna — Portfolio (Next.js · Tailwind · shadcn/ui)
+# Luigi Pinna — Portfolio
 
-Drop-in Next.js codebase che replica esattamente il prototipo HTML del portfolio.
-Tutto è in `pages router` (come il tuo codebase attuale) e in **JavaScript** (no TypeScript), così non serve cambiare niente alla tua config base.
+Personal portfolio of Luigi Pinna — Software Engineer based in Cagliari, Italy.
+Built with Next.js, Tailwind CSS and shadcn/ui primitives.
+
+Live at: [luigipinna.dev](https://luigipinna.dev) (or your custom domain).
 
 ---
 
 ## Stack
 
-- **Next.js 14** (pages router)
+- **Next.js 15** (pages router)
 - **React 18**
-- **Tailwind CSS** con CSS variables per i 3 temi (paper / dark / blueprint)
-- **shadcn/ui** primitives — usati solo dove davvero servono:
-  - `Button` (CTA)
-  - `Command` / `CommandDialog` (palette ⌘K, basato su `cmdk` + `@radix-ui/react-dialog`)
-- **next/font** (`JetBrains_Mono`, `Space_Grotesk`, `Newsreader`) — niente `<link>` a Google Fonts
-- **next/image** per la foto
+- **Tailwind CSS** with CSS variables driving three themes (paper / dark / blueprint)
+- **shadcn/ui** primitives — used only where they earn their keep:
+  - `Button` for CTAs
+  - `Command` / `CommandDialog` for the ⌘K palette (`cmdk` + `@radix-ui/react-dialog`)
+- **next/font** (`JetBrains Mono`, `Space Grotesk`, `Newsreader`) — no Google Fonts `<link>` tags
+- **next/image** for the portrait
 
-Niente styled-components, niente framer-motion, niente react-icons.
+No styled-components, no framer-motion, no react-icons.
 
 ---
 
-## Struttura
+## Project structure
 
 ```
-nextjs/
+portfolio-luigi/
 ├── package.json
 ├── tailwind.config.js
 ├── postcss.config.js
 ├── next.config.js
-├── jsconfig.json              # alias "@/*" → "./src/*"
-├── components.json            # config shadcn (se vuoi aggiungere altri componenti via CLI)
+├── jsconfig.json              # path alias "@/*" → "./src/*"
+├── components.json            # shadcn config (for adding more primitives via CLI)
+├── Dockerfile
 ├── public/
-│   └── images/hero_img.png    # foto già copiata
+│   └── images/                # static assets (hero portrait, etc.)
 └── src/
     ├── pages/
-    │   ├── _app.js            # font, ThemeProvider, globals.css
+    │   ├── _app.js            # fonts, ThemeProvider, globals.css
     │   ├── _document.js
-    │   └── index.js           # compone tutte le sezioni
+    │   └── index.js           # composes every section
     ├── styles/
-    │   └── globals.css        # 3 temi via :root[data-theme] + base
+    │   └── globals.css        # three themes via :root[data-theme] + base styles
     ├── lib/
-    │   ├── data.js            # progetti, journey, stack, contact
+    │   ├── data.js            # projects, journey, stack, contact info
     │   ├── hooks.js           # useLocalTime, useInView, smoothTo
     │   └── utils.js           # cn() helper
     └── components/
         ├── ui/
-        │   ├── button.jsx     # shadcn Button (variant: default/ghost)
-        │   └── command.jsx    # shadcn Command (palette ⌘K)
-        ├── ThemeProvider.jsx  # paper/dark/blueprint + persistenza
+        │   ├── button.jsx     # shadcn Button (variants: default / ghost)
+        │   └── command.jsx    # shadcn Command (⌘K palette)
+        ├── ThemeProvider.jsx  # paper / dark / blueprint + localStorage persistence
         ├── TopBar.jsx
         ├── Hero.jsx
         ├── SectionHead.jsx
@@ -57,105 +60,70 @@ nextjs/
         ├── Stack.jsx
         ├── Contact.jsx
         ├── Footer.jsx
+        ├── CookieBanner.jsx
         └── CommandPalette.jsx
 ```
 
 ---
 
-## Avvio rapido (progetto a sé)
-
-Se vuoi vederlo girare subito senza toccare il tuo repo esistente:
+## Getting started
 
 ```bash
-cd nextjs
 npm install
 npm run dev
 ```
 
-Apri `http://localhost:3000`.
+Open [http://localhost:3000](http://localhost:3000).
 
----
-
-## Come integrarlo nel tuo repo esistente
-
-Il tuo `Personal-portfolio` ha già Next.js + `src/`. Per migrare:
-
-### 1. Installa le dipendenze
+### Other commands
 
 ```bash
-npm install tailwindcss postcss autoprefixer \
-            tailwind-merge clsx tailwindcss-animate \
-            class-variance-authority \
-            @radix-ui/react-slot @radix-ui/react-dialog \
-            cmdk lucide-react
-```
-
-### 2. Rimuovi le dipendenze vecchie (opzionale ma consigliato)
-
-```bash
-npm uninstall styled-components framer-motion react-icons
-```
-
-### 3. Copia questi file dal mio output
-
-| Da `nextjs/...`        | Al tuo repo             |
-|------------------------|-------------------------|
-| `tailwind.config.js`   | `tailwind.config.js`    |
-| `postcss.config.js`    | `postcss.config.js`     |
-| `jsconfig.json`        | `jsconfig.json`         |
-| `components.json`      | `components.json`       |
-| `src/styles/globals.css` | `src/styles/globals.css` (sovrascrive) |
-| `src/lib/*`            | `src/lib/*`             |
-| `src/components/*`     | `src/components/*` (sovrascrive le vecchie sezioni) |
-| `src/pages/_app.js`    | `src/pages/_app.js` (sovrascrive) |
-| `src/pages/index.js`   | `src/pages/index.js` (sovrascrive) |
-
-Le immagini in `public/images/` sono già nelle posizioni giuste — non toccare la tua `public/`.
-
-### 4. Pulisci
-
-Cancella `src/styles/theme.js`, `src/themes/`, `src/styles/GlobalComponents/`,
-e tutte le vecchie cartelle componenti che ora sono sostituite
-(Hero, Projects, Technologies, ProfessionalJourney, SkillsRadar, TimeLine, Acomplishments…).
-Tieni `src/constants/` solo se ti serve altrove, altrimenti elimina anche quella
-(i dati sono già dentro `src/lib/data.js`).
-
-### 5. Test
-
-```bash
-npm run dev
+npm run build   # production build
+npm run start   # serve the production build
+npm run lint    # run ESLint
 ```
 
 ---
 
-## Note
+## Notes
 
-### Temi
-Cambi tema impostando `data-theme="light|dark|blueprint"` sull'`<html>`.
-Il `ThemeProvider` lo gestisce e persiste in `localStorage` (`lp-theme`).
+### Themes
+Themes are switched by setting `data-theme="light|dark|blueprint"` on `<html>`.
+`ThemeProvider` handles the toggle and persists the choice in `localStorage`
+under the `lp-theme` key.
 
 ### Tailwind colors
-Tutti i colori sono mappati a CSS variables, quindi puoi usare classi tipo
-`bg-bg`, `text-ink`, `text-ink-mute`, `border-line`, `text-accent` — i valori
-cambiano automaticamente col tema.
+Every color is mapped to a CSS variable, so classes like `bg-bg`, `text-ink`,
+`text-ink-mute`, `border-line` and `text-accent` automatically follow the
+active theme.
 
-### shadcn CLI
-La cartella ha già `components.json` configurato. Se vuoi aggiungere altri
-componenti shadcn (Dialog, Tooltip, etc.):
+### Cookie banner
+`CookieBanner.jsx` is a lightweight, self-contained notice. The site uses only
+essential cookies (theme preference) — no analytics or third-party scripts.
+Consent is stored in `localStorage` under `lp-cookie-consent`.
+
+### Adding shadcn components
+`components.json` is preconfigured. To add more shadcn primitives:
 
 ```bash
 npx shadcn@latest add tooltip
 ```
 
-### Aggiungere progetti / esperienze
-Tutto è in `src/lib/data.js` — modifica gli array `projects`, `journey`, `stack`, `contact`.
-I componenti riflettono le modifiche automaticamente.
+### Updating content
+All page content lives in `src/lib/data.js` — edit the `projects`, `journey`,
+`stack`, and `contact` arrays and every section updates automatically.
 
 ---
 
-## Cosa NON è incluso (di proposito)
+## Deployment
 
-- Blog (avevi una versione su `pages/blog/`; non riscritta qui — recuperala dal tuo repo)
-- LanguageToggle (IT/EN) — non era nel prototipo. Se serve, aggiungi `next-i18next`.
-- CookieBanner — se ti serve, riusabile com'è dal tuo repo vecchio.
-- BackgroundAnimation — il design nuovo non ne ha bisogno.
+Optimized for [Vercel](https://vercel.com). Just import the repo and deploy —
+no extra configuration required. A `Dockerfile` is also included for
+container-based hosting.
+
+---
+
+## License
+
+Personal project. Code is free to read and learn from; please don't republish
+the design or copy as your own portfolio.

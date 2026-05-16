@@ -9,6 +9,7 @@ import Stack from '@/components/Stack';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import CommandPalette from '@/components/CommandPalette';
+import CookieBanner from '@/components/CookieBanner';
 
 export default function Home() {
   const [cmdOpen, setCmdOpen] = useState(false);
@@ -35,6 +36,7 @@ export default function Home() {
       </main>
       <Footer />
       <CommandPalette open={cmdOpen} setOpen={setCmdOpen} />
+      <CookieBanner />
     </>
   );
 }

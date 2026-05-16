@@ -16,7 +16,7 @@ export default function Hero() {
         <div className="grid gap-8 md:grid-cols-[160px_1fr]">
           {/* left: portrait + identity */}
           <aside className="flex flex-row items-center gap-5 md:flex-col md:items-start md:gap-5 md:pt-1.5">
-            <div className="group relative h-[88px] w-[88px] shrink-0 cursor-pointer overflow-hidden rounded border border-line bg-bg-2 md:h-[140px] md:w-[140px]">
+            <div className="group relative h-[88px] w-[88px] shrink-0 overflow-hidden rounded border border-line bg-bg-2 md:h-[140px] md:w-[140px]">
               <Image
                 src="/images/hero_img.png"
                 alt="Luigi Pinna"
@@ -24,9 +24,6 @@ export default function Hero() {
                 sizes="140px"
                 className="object-cover object-top grayscale contrast-[1.05] transition-all duration-500 group-hover:scale-[1.03] group-hover:grayscale-0 group-hover:contrast-100"
               />
-              <span className="pointer-events-none absolute bottom-1.5 left-1.5 rounded-sm bg-ink px-1.5 py-px font-mono text-[9px] tracking-[0.12em] text-bg opacity-0 transition-opacity group-hover:opacity-100">
-                IMG · 01
-              </span>
             </div>
 
             <div className="flex flex-col gap-1 font-mono text-[10.5px] leading-[1.5] tracking-[0.06em] text-ink-mute">
@@ -62,9 +59,12 @@ export default function Hero() {
             <p className="mb-10 max-w-[60ch] m-0 font-sans text-[clamp(17px,1.6vw,21px)] leading-[1.5] text-ink-soft">
               I build web and software products and weave AI into them — mostly with{' '}
               <em className="font-serif font-normal italic text-ink">FastAPI</em>,{' '}
-              <em className="font-serif font-normal italic text-ink">React</em> and{' '}
-              <em className="font-serif font-normal italic text-ink">OpenAI</em>. I like work
-              that is pragmatic, well-structured, and tied to a real business outcome.
+              <em className="font-serif font-normal italic text-ink">React</em>,{' '}
+              <em className="font-serif font-normal italic text-ink">Claude</em> and{' '}
+              <em className="font-serif font-normal italic text-ink">OpenAI</em>, including{' '}
+              <em className="font-serif font-normal italic text-ink">agent integration</em>{' '}
+              into existing systems. I like work that is pragmatic, well-structured, and tied
+              to a real business outcome.
             </p>
 
             <div className="mt-2 flex flex-wrap items-center gap-4">

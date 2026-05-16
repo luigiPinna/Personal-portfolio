@@ -16,7 +16,7 @@ export const meta = {
     { k: 'Based in',         v: 'Cagliari',     unit: 'IT' },
     { k: 'Experience',       v: '5',            unit: 'yrs' },
     { k: 'Shipped projects', v: '20',           unit: '+' },
-    { k: 'Domain',           v: 'Banking · AI', unit: '' },
+    { k: 'Domain',           v: 'Finance · AI', unit: '' },
   ],
 };
 
