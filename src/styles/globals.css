@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── THEMES ───────────────────────────────────────────────────────────── */
+:root,
+:root[data-theme="light"] {
+  --bg: #f3efe8;
+  --bg-2: #ebe6dd;
+  --ink: #15140f;
+  --ink-soft: #4a4740;
+  --ink-mute: #8a877e;
+  --line: #d8d2c5;
+  --line-strong: #b8b1a1;
+  --accent: #c3402c;
+  --accent-soft: #c3402c1a;
+  --panel: #fdfbf6;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0c0c0d;
+  --bg-2: #141416;
+  --ink: #e9e6df;
+  --ink-soft: #b6b2a8;
+  --ink-mute: #6f6c63;
+  --line: #1f1f22;
+  --line-strong: #2f2f33;
+  --accent: #d96a52;
+  --accent-soft: #d96a521f;
+  --panel: #15151a;
+}
+
+:root[data-theme="blueprint"] {
+  --bg: #0d1620;
+  --bg-2: #11202d;
+  --ink: #e6efff;
+  --ink-soft: #a6bcd6;
+  --ink-mute: #5d758e;
+  --line: #1c2c3d;
+  --line-strong: #2c4159;
+  --accent: #76d7ff;
+  --accent-soft: #76d7ff20;
+  --panel: #122131;
+}
+
+/* ─── BASE ─────────────────────────────────────────────────────────────── */
+@layer base {
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+  }
+  body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'ss01', 'ss02', 'cv11';
+  }
+  body.density-tight  { font-size: 15px; }
+  body.density-airy   { font-size: 17px; }
+
+  ::selection { background: var(--accent); color: var(--bg); }
+}
+
+/* paper grain only on light theme */
+:root[data-theme="light"] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.045 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.7;
+  mix-blend-mode: multiply;
+}
+
+/* utility */
+.shell { max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); }

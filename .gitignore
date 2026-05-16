@@ -3,6 +3,7 @@
 # other
 .idea
 
+.claude
 
 # dependencies
 /node_modules

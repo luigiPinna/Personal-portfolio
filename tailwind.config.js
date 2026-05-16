@@ -1,42 +1,43 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx}'],
-  darkMode: 'class',
+  darkMode: ['class', '[data-theme="dark"]'],
+  content: [
+    './src/pages/**/*.{js,jsx}',
+    './src/components/**/*.{js,jsx}',
+  ],
   theme: {
     extend: {
       colors: {
-        // Dark theme
-        'dark-bg': '#0a0a0f',
-        'dark-bg-secondary': '#16161f',
-        'dark-bg-tertiary': '#1f1f2e',
-        'dark-text': '#e4e4e7',
-        'dark-text-secondary': '#a1a1aa',
-        // Light theme
-        'light-bg': '#ffffff',
-        'light-bg-secondary': '#f9fafb',
-        'light-bg-tertiary': '#f3f4f6',
-        'light-text': '#18181b',
-        'light-text-secondary': '#52525b',
-        // Accents
-        'accent-purple': '#8b5cf6',
-        'accent-cyan': '#06b6d4',
-        'accent-green': '#10b981',
+        bg:           'var(--bg)',
+        'bg-2':       'var(--bg-2)',
+        ink:          'var(--ink)',
+        'ink-soft':   'var(--ink-soft)',
+        'ink-mute':   'var(--ink-mute)',
+        line:         'var(--line)',
+        'line-strong':'var(--line-strong)',
+        accent:       'var(--accent)',
+        'accent-soft':'var(--accent-soft)',
+        panel:        'var(--panel)',
       },
-      animation: {
-        'float': 'float 3s ease-in-out infinite',
-        'gradient': 'gradient-shift 3s ease infinite',
-        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      fontFamily: {
+        mono:  ['var(--font-mono)',  'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+        sans:  ['var(--font-sans)',  'system-ui', 'sans-serif'],
+        serif: ['var(--font-serif)', 'Georgia', 'serif'],
+      },
+      maxWidth: {
+        shell: '1240px',
       },
       keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
+        pulse: {
+          '0%':   { boxShadow: '0 0 0 0 var(--accent)', opacity: 1 },
+          '70%':  { boxShadow: '0 0 0 8px transparent', opacity: 0.9 },
+          '100%': { boxShadow: '0 0 0 0 transparent',   opacity: 1 },
         },
-        'gradient-shift': {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-        },
+      },
+      animation: {
+        pulse: 'pulse 2.4s ease-out infinite',
       },
     },
   },
-  plugins: [],
-}
+  plugins: [require('tailwindcss-animate')],
+};
