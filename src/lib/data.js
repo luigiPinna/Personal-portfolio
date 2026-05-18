@@ -34,6 +34,12 @@ export const projects = [
     source: '', visit: '',
   },
   {
+    id: 'p12', title: 'Healthcare Network Map', year: '2024', role: 'Team build', type: 'work',
+    desc: 'Geospatial decision tool for an insurance group that maps the affiliated healthcare network across Italy, computes drive-time and distance reachability zones, and visualizes policyholder density to support network planning.',
+    tags: ['Python', 'FastAPI', 'React', 'Leaflet', 'Geoapify', 'Oracle'],
+    source: '', visit: '',
+  },
+  {
     id: 'p7', title: 'DocuMentor', year: '2024', role: 'Solo build', type: 'ai',
     desc: 'Ask natural-language questions about your PDFs and get context-aware answers grounded in the document.',
     tags: ['Python', 'OpenAI', 'LLM', 'Flask', 'HuggingFace'],
