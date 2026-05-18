@@ -22,6 +22,18 @@ export const meta = {
 
 export const projects = [
   {
+    id: 'p10', title: 'Telco Migration Suite', year: '2026', role: 'Professional work', type: 'work',
+    desc: 'Automation pipeline for a telco operator that processes inbound migration emails, extracts structured data with Claude, matches it across multiple CSV sources, and pushes validated records to the provisioning system over REST and SOAP.',
+    tags: ['Python', 'PostgreSQL', 'Claude', 'Microsoft Graph', 'SOAP/REST', 'Grafana'],
+    source: '', visit: '',
+  },
+  {
+    id: 'p11', title: 'Insurance Call-Center RAG', year: '2025', role: 'Professional work', type: 'work',
+    desc: 'Internal assistant for call-center agents that answers questions on policy documents in natural language and opens the cited source directly at the referenced page. Microservice ingestion plus React + Python backend.',
+    tags: ['Python', 'React', 'OpenAI', 'Azure AI Search', 'MongoDB', 'Vector DB', 'LLM'],
+    source: '', visit: '',
+  },
+  {
     id: 'p7', title: 'DocuMentor', year: '2024', role: 'Solo build', type: 'ai',
     desc: 'Ask natural-language questions about your PDFs and get context-aware answers grounded in the document.',
     tags: ['Python', 'OpenAI', 'LLM', 'Flask', 'HuggingFace'],
@@ -38,6 +50,13 @@ export const projects = [
     desc: 'Python app that loads a PDF and answers questions about it via an LLM, refusing anything off-document.',
     tags: ['Python', 'OpenAI', 'LLM'],
     source: 'https://github.com/luigiPinna/PDFChatQA', visit: '',
+  },
+  {
+    id: 'p0', title: 'This portfolio', year: '2024', role: 'Solo build', type: 'web',
+    desc: 'The site you are reading now. Designed as a quiet document, not a billboard.',
+    tags: ['Next.js', 'Tailwind', 'shadcn/ui'],
+    source: 'https://github.com/luigiPinna/Personal-portfolio',
+    visit: 'https://luigipinna.com',
   },
   {
     id: 'p5', title: 'Cryptocurrency Converter', year: '2023', role: 'Full stack', type: 'web',
@@ -75,13 +94,6 @@ export const projects = [
     desc: 'Tetris reproduced from scratch in vanilla JavaScript — a small workout to sharpen the fundamentals.',
     tags: ['Vanilla JS'],
     source: 'https://github.com/luigiPinna/Tetris_javascript/tree/main/public', visit: '',
-  },
-  {
-    id: 'p0', title: 'This portfolio', year: '2026', role: 'Solo build', type: 'web',
-    desc: 'The site you are reading now. Designed as a quiet document, not a billboard.',
-    tags: ['Next.js', 'Tailwind', 'shadcn/ui'],
-    source: 'https://github.com/luigiPinna/Personal-portfolio',
-    visit: 'https://luigipinna.com',
   },
 ];
 

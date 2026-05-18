@@ -7,13 +7,14 @@ export default function Work() {
   const [filter, setFilter] = useState('all');
 
   const filters = useMemo(() => {
-    const counts = { all: projects.length, ai: 0, web: 0, fun: 0 };
+    const counts = { all: projects.length, ai: 0, web: 0, fun: 0, work: 0 };
     projects.forEach((p) => (counts[p.type] = (counts[p.type] || 0) + 1));
     return [
-      { id: 'all', label: 'Everything', count: counts.all },
-      { id: 'ai',  label: 'AI',         count: counts.ai },
-      { id: 'web', label: 'Web apps',   count: counts.web },
-      { id: 'fun', label: 'For fun',    count: counts.fun },
+      { id: 'all',  label: 'Everything', count: counts.all },
+      { id: 'ai',   label: 'AI',         count: counts.ai },
+      { id: 'web',  label: 'Web apps',   count: counts.web },
+      { id: 'fun',  label: 'For fun',    count: counts.fun },
+      { id: 'work', label: 'Work',       count: counts.work },
     ];
   }, []);
 
