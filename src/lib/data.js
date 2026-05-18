@@ -13,10 +13,10 @@ export const meta = {
     focus: 'Currently leading complex projects for major banking clients at Aevoluta.',
   },
   metrics: [
-    { k: 'Based in',         v: 'Cagliari',     unit: 'IT' },
+    { k: 'Based in',         v: 'Italy',        unit: 'Cagliari' },
     { k: 'Experience',       v: '5',            unit: 'yrs' },
     { k: 'Shipped projects', v: '20',           unit: '+' },
-    { k: 'Domain',           v: 'Finance · AI', unit: '' },
+    { k: 'Domain',           v: 'Full-stack · AI', unit: '' },
   ],
 };
 
@@ -127,7 +127,7 @@ export const journey = [
   {
     year: '2019', title: 'BSc Business Administration', company: 'University of Cagliari', type: 'education',
     body: 'Foundations in financial and applied mathematics; coursework in Big Data analytics applied to the banking sector.',
-    stack: [],
+    stack: ['Financial analysis', 'Applied mathematics', 'Business management', 'Statistics', 'Big Data analytics'],
   },
 ];
 
@@ -144,7 +144,8 @@ export const stack = [
   ]},
   { name: 'AI & Automation', num: '03', items: [
     { name: 'OpenAI',           level: 90 },
-    { name: 'Anthropic',        level: 85 },
+    { name: 'Anthropic',        level: 90 },
+    { name: 'AI Agents',        level: 85 },
     { name: 'Azure AI',         level: 75 },
     { name: 'UiPath (RPA)',     level: 80 },
   ]},
