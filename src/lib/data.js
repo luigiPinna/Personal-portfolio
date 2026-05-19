@@ -23,19 +23,19 @@ export const meta = {
 export const projects = [
   {
     id: 'p10', title: 'Telco Migration Suite', year: '2026', role: 'Professional work', type: 'work',
-    desc: 'Automation pipeline for a telco operator that processes inbound migration emails, extracts structured data with Claude, matches it across multiple CSV sources, and pushes validated records to the provisioning system over REST and SOAP.',
+    desc: 'Automation pipeline for a telco operator that processes inbound migration emails, extracts structured data with Claude, matches it across multiple CSV sources, and pushes validated records to the provisioning system over REST and SOAP. Processes a few thousand migrations per week and cuts provisioning time by ~90%.',
     tags: ['Python', 'PostgreSQL', 'Claude', 'Microsoft Graph', 'SOAP/REST', 'Grafana'],
     source: '', visit: '',
   },
   {
     id: 'p11', title: 'Insurance Call-Center RAG', year: '2025', role: 'Professional work', type: 'work',
-    desc: 'Internal assistant for call-center agents that answers questions on policy documents in natural language and opens the cited source directly at the referenced page. Microservice ingestion plus React + Python backend.',
+    desc: 'Internal assistant for call-center agents that answers questions on policy documents in natural language and opens the cited source directly at the referenced page. Microservice ingestion plus React + Python backend. Used by ~200 operators daily — cut customer response time by ~70% and lifted answer accuracy by ~90%.',
     tags: ['Python', 'React', 'OpenAI', 'Azure AI Search', 'MongoDB', 'Vector DB', 'LLM'],
     source: '', visit: '',
   },
   {
     id: 'p12', title: 'Healthcare Network Map', year: '2024', role: 'Team build', type: 'work',
-    desc: 'Geospatial decision tool for an insurance group that maps the affiliated healthcare network across Italy, computes drive-time and distance reachability zones, and visualizes policyholder density to support network planning.',
+    desc: 'Geospatial decision tool for an insurance group that maps the affiliated healthcare network across Italy, computes drive-time and distance reachability zones, and visualizes policyholder density to support network planning. Renders tens of thousands of facilities and surfaces thousands of prospective policyholders inside any selected catchment area.',
     tags: ['Python', 'FastAPI', 'React', 'Leaflet', 'Geoapify', 'Oracle'],
     source: '', visit: '',
   },
