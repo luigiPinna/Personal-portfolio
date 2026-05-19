@@ -77,3 +77,16 @@
 
 /* utility */
 .shell { max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); }
+
+/* article body — used by /blog/[slug] */
+.article-body { color: var(--ink-soft); font-size: 17px; line-height: 1.7; }
+.article-body p { margin: 0 0 1.25em; }
+.article-body p:last-child { margin-bottom: 0; }
+.article-body a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--line-strong);
+  transition: border-color 0.18s, color 0.18s;
+}
+.article-body a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+.article-body em { font-family: var(--font-serif); font-style: italic; color: var(--ink); }
+.article-body strong { color: var(--ink); font-weight: 600; }

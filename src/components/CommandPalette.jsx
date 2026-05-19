@@ -59,6 +59,11 @@ export default function CommandPalette({ open, setOpen }) {
               <CommandShortcut>{hint}</CommandShortcut>
             </CommandItem>
           ))}
+          <CommandItem onSelect={run(() => (window.location.href = '/blog'))}>
+            <span className="font-mono text-[12px] text-ink-mute">06</span>
+            <span>Writing</span>
+            <CommandShortcut>G B</CommandShortcut>
+          </CommandItem>
         </CommandGroup>
 
         <CommandGroup heading="Theme">
