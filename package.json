@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "og": "node scripts/generate-og.mjs"
   },
   "overrides": {
     "postcss": "^8.5.10"
@@ -29,6 +30,8 @@
     "eslint": "^8.57.1",
     "eslint-config-next": "^15.1.8",
     "postcss": "^8.5.10",
+    "satori": "^0.26.0",
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.13"
   }
 }

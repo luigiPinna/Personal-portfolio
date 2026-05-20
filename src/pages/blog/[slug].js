@@ -44,10 +44,21 @@ export default function BlogPost({ post, others }) {
       <Head>
         <title>{post.title} — Luigi Pinna</title>
         <meta name="description" content={post.excerpt} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://luigipinna.com/blog/${post.slug}`} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
-        <meta property="og:type" content="article" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:image" content="https://luigipinna.com/og.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="luigipinna.com" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content="https://luigipinna.com/og.png" />
       </Head>
 
       <TopBar />

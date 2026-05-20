@@ -51,6 +51,22 @@ export default function BlogIndex() {
           content="Notes on AI in production, remote work, and the quiet parts of building software, by Luigi Pinna."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://luigipinna.com/blog" />
+        <meta property="og:title" content="Writing — Luigi Pinna" />
+        <meta
+          property="og:description"
+          content="Notes on AI in production, remote work, and the quiet parts of building software."
+        />
+        <meta property="og:image" content="https://luigipinna.com/og.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="luigipinna.com" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Writing — Luigi Pinna" />
+        <meta name="twitter:image" content="https://luigipinna.com/og.png" />
       </Head>
 
       <TopBar />
