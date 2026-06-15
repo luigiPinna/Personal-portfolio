@@ -24,6 +24,12 @@ export default function Home() {
           content="Luigi Pinna — Software Engineer building web and AI products with FastAPI, React and OpenAI. Based in Cagliari, Italy."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Luigi Pinna — Writing"
+          href="https://luigipinna.com/feed.xml"
+        />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://luigipinna.com/" />
