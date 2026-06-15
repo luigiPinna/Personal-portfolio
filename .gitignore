@@ -5,6 +5,10 @@
 
 .claude
 
+# local docs (not published for now)
+CLAUDE.md
+ROADMAP.md
+
 # dependencies
 /node_modules
 /.pnp
