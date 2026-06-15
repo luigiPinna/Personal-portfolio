@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden border-b border-line py-24"
+      className="relative overflow-hidden border-b border-line pt-12 pb-24"
     >
       <div className="shell">
         <div className="grid gap-8 md:grid-cols-[160px_1fr]">
