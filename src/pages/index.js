@@ -10,6 +10,7 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import CommandPalette from '@/components/CommandPalette';
 import CookieBanner from '@/components/CookieBanner';
+import { personLd, websiteLd } from '@/lib/jsonld';
 
 export default function Home() {
   const [cmdOpen, setCmdOpen] = useState(false);
@@ -43,6 +44,15 @@ export default function Home() {
           content="Software engineer building things that ship — FastAPI, React, Claude, OpenAI."
         />
         <meta name="twitter:image" content="https://luigipinna.com/og.png" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
+        />
       </Head>
 
       <TopBar onOpenCmd={() => setCmdOpen(true)} />

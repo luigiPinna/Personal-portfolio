@@ -11,6 +11,7 @@ import {
   formatDate,
   readingTimeMin,
 } from '@/lib/blog';
+import { articleLd } from '@/lib/jsonld';
 
 export async function getStaticPaths() {
   return {
@@ -59,6 +60,11 @@ export default function BlogPost({ post, others }) {
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.excerpt} />
         <meta name="twitter:image" content="https://luigipinna.com/og.png" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd(post)) }}
+        />
       </Head>
 
       <TopBar />

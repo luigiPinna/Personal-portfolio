@@ -8,10 +8,12 @@ import CookieBanner from '@/components/CookieBanner';
 import {
   featuredPost,
   regularPosts,
+  publishedPosts,
   getCategories,
   formatDate,
   readingTimeMin,
 } from '@/lib/blog';
+import { blogLd } from '@/lib/jsonld';
 import { cn } from '@/lib/utils';
 
 export default function BlogIndex() {
@@ -67,6 +69,11 @@ export default function BlogIndex() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Writing — Luigi Pinna" />
         <meta name="twitter:image" content="https://luigipinna.com/og.png" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(blogLd(publishedPosts)) }}
+        />
       </Head>
 
       <TopBar />
