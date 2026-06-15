@@ -160,6 +160,7 @@ export const stack = [
 export const contact = [
   { k: 'email',    v: 'luigipinna3@gmail.com',         href: 'mailto:luigipinna3@gmail.com',           copyable: true },
   { k: 'github',   v: 'github.com/luigiPinna',         href: 'https://github.com/luigiPinna' },
+  { k: 'hn',       v: 'news.ycombinator.com',          href: 'https://news.ycombinator.com/' },
   { k: 'linkedin', v: 'linkedin.com/in/luigipinna',    href: 'https://www.linkedin.com/in/luigipinna/' },
   { k: 'site',     v: 'luigipinna.com',                href: 'https://luigipinna.com' },
 ];
