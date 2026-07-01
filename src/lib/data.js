@@ -26,6 +26,13 @@ export const meta = {
 
 export const projects = [
   {
+    id: 'sagras', title: 'Sagras', year: '2026', role: 'Solo build', type: 'web',
+    desc: 'Interactive map of Sardinia’s sagre and traditional festivals — mobile-first, with the map as the protagonist (standard tiles plus Esri satellite). A curated, validated dataset of a few hundred events across the island, browsable by month, so you can always find what’s happening near you.',
+    tags: ['React', 'Vite', 'Leaflet', 'Tailwind'],
+    source: 'https://github.com/luigiPinna/sagras',
+    visit: 'https://sagras-app.vercel.app',
+  },
+  {
     id: 'p10', title: 'Telco Migration Suite', year: '2026', role: 'Professional work', type: 'work',
     desc: 'Automation pipeline for a telco operator that processes inbound migration emails, extracts structured data with Claude, matches it across multiple CSV sources, and pushes validated records to the provisioning system over REST and SOAP. Processes a few thousand migrations per week and cuts provisioning time by ~90%.',
     tags: ['Python', 'PostgreSQL', 'Claude', 'Microsoft Graph', 'SOAP/REST', 'Grafana'],
