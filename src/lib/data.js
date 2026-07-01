@@ -48,6 +48,14 @@ export const projects = [
     source: '', visit: '',
   },
   {
+    id: 'bonusly', title: 'Bonusly', year: '2025', role: 'Solo build', type: 'web',
+    desc: 'A smart guide to Italian state bonuses and incentives — search and filter national benefits by category (family, home, work, education) and ISEE bracket to find what you are actually entitled to. Mobile-first, clean UI, built as a fast MVP on a curated dataset.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind', 'Vercel'],
+    image: '/images/projects/bonus-italia.png',
+    source: 'https://github.com/luigiPinna/bonus-italia-app',
+    visit: 'https://www.bonusly.org',
+  },
+  {
     id: 'p11', title: 'Insurance Call-Center RAG', year: '2025', role: 'Professional work', type: 'work',
     desc: 'Internal assistant for call-center agents that answers questions on policy documents in natural language and opens the cited source directly at the referenced page. Microservice ingestion plus React + Python backend. Used by ~200 operators daily — cut customer response time by ~70% and lifted answer accuracy by ~90%.',
     tags: ['Python', 'React', 'OpenAI', 'Azure AI Search', 'MongoDB', 'Vector DB', 'LLM'],
