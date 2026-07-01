@@ -97,7 +97,7 @@ function ProjectRow({ project, index }) {
         ))}
       </div>
 
-      <div className="col-start-2 flex gap-2.5 self-center font-mono text-[11px] text-ink-mute opacity-0 transition-opacity group-hover:opacity-100 md:col-start-auto">
+      <div className="col-start-2 flex gap-2.5 self-center font-mono text-[11px] text-ink-mute opacity-70 transition-opacity group-hover:opacity-100 md:col-start-auto">
         {project.source ? (
           <a
             href={project.source}

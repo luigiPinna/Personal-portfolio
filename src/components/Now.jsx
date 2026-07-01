@@ -3,10 +3,10 @@ import SectionHead from './SectionHead';
 
 const ROWS = [
   { k: 'role',    v: 'Software Engineer @ Aevoluta' },
-  { k: 'stack',   v: 'FastAPI · React · OpenAI · Azure AI' },
+  { k: 'stack',   v: 'Python · FastAPI · React · OpenAI · Azure AI' },
   { k: 'reading', v: 'Designing ML Systems — Chip Huyen' },
   { k: 'side',    v: 'Fine-tuning small models for niche RAG' },
-  { k: 'status',  v: 'Open to interesting freelance', accent: true },
+  { k: 'status',  v: 'Always up for a good problem', accent: true },
 ];
 
 export default function Now() {
@@ -20,7 +20,7 @@ export default function Now() {
           <div className="hidden md:block" />
           <p className="m-0 max-w-[38ch] font-sans text-[clamp(18px,1.5vw,22px)] leading-[1.55] tracking-[-0.005em] text-ink">
             Leading complex projects for major{' '}
-            <em className="font-serif font-normal italic text-accent">banking clients</em>{' '}
+            <em className="font-serif font-normal italic text-accent">banking &amp; enterprise clients</em>{' '}
             at Aevoluta — designing, developing and deploying end-to-end.
             Exploring better ways to ship{' '}
             <em className="font-serif font-normal italic text-accent">&nbsp;AI features</em>{' '}

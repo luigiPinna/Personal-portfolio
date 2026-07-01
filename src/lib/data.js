@@ -1,5 +1,9 @@
 /* Single source of truth — derived from your existing constants & journey JSON. */
 
+/* Career start — experience is computed so it advances on its own each year. */
+const CAREER_START_YEAR = 2020;
+const experienceYears = new Date().getFullYear() - CAREER_START_YEAR;
+
 export const meta = {
   name: 'Luigi Pinna',
   role: 'Software Engineer',
@@ -9,18 +13,25 @@ export const meta = {
   timezone: 'Europe/Rome',
   intro: {
     lede:
-      'I build web and software products and weave AI into them — mostly with FastAPI, React and OpenAI. I like work that is pragmatic, well-structured, and tied to a real business outcome.',
-    focus: 'Currently leading complex projects for major banking clients at Aevoluta.',
+      'I design and build software — backends, APIs and web apps — and weave AI into them, mostly with Python, FastAPI, React and OpenAI. I care about clean, well-structured code, solid engineering, and shipping things tied to a real business outcome.',
+    focus: 'Currently leading complex projects for major banking and other enterprise clients at Aevoluta.',
   },
   metrics: [
-    { k: 'Based in',         v: 'Italy',        unit: 'Cagliari' },
-    { k: 'Experience',       v: '5',            unit: 'yrs' },
-    { k: 'Shipped projects', v: '20',           unit: '+' },
-    { k: 'Domain',           v: 'Full-stack · AI', unit: '' },
+    { k: 'Based in',          v: 'Italy',             unit: 'Cagliari' },
+    { k: 'Experience',        v: String(experienceYears), unit: 'yrs' },
+    { k: 'Relevant projects', v: '20',                unit: '+' },
+    { k: 'Domain',            v: 'Full-stack · AI',   unit: '' },
   ],
 };
 
 export const projects = [
+  {
+    id: 'sagras', title: 'Sagras', year: '2026', role: 'Solo build', type: 'web',
+    desc: 'Interactive map of Sardinia’s sagre and traditional festivals — mobile-first, with the map as the protagonist (standard tiles plus Esri satellite). A curated, validated dataset of a few hundred events across the island, browsable by month, so you can always find what’s happening near you.',
+    tags: ['React', 'Vite', 'Leaflet', 'Tailwind'],
+    source: 'https://github.com/luigiPinna/sagras',
+    visit: 'https://sagras-app.vercel.app',
+  },
   {
     id: 'p10', title: 'Telco Migration Suite', year: '2026', role: 'Professional work', type: 'work',
     desc: 'Automation pipeline for a telco operator that processes inbound migration emails, extracts structured data with Claude, matches it across multiple CSV sources, and pushes validated records to the provisioning system over REST and SOAP. Processes a few thousand migrations per week and cuts provisioning time by ~90%.',
@@ -85,8 +96,8 @@ export const projects = [
   },
   {
     id: 'p2', title: 'The NetFish', year: '2022', role: 'Team build', type: 'web',
-    desc: 'Web app that suggests films based on weather and time of day. Personal watchlists, multi-stack backend (SpringBoot + .NET + Laravel) with Angular front-end.',
-    tags: ['Angular', 'SpringBoot', '.NET', 'MySQL'],
+    desc: 'Web app that suggests films based on weather and time of day. Personal watchlists, multi-stack backend (Spring Boot + .NET + Laravel) with Angular front-end.',
+    tags: ['Angular', 'Spring Boot', 'Java', '.NET', 'C#', 'Laravel', 'MySQL'],
     source: 'https://github.com/luigiPinna/TheNetFish-project-revisited', visit: '',
   },
   {
@@ -96,10 +107,10 @@ export const projects = [
     source: 'https://github.com/luigiPinna/Contacts-with-Spring-Backend-and-Angular-Frontend', visit: '',
   },
   {
-    id: 'p1', title: 'Tetris — JavaScript', year: '2021', role: 'For fun', type: 'fun',
-    desc: 'Tetris reproduced from scratch in vanilla JavaScript — a small workout to sharpen the fundamentals.',
-    tags: ['Vanilla JS'],
-    source: 'https://github.com/luigiPinna/Tetris_javascript/tree/main/public', visit: '',
+    id: 'pc', title: 'Criminal Records System — C', year: '2020', role: 'Solo build', type: 'fun',
+    desc: 'Public-safety records simulation written in pure C. Built on manual memory management — malloc / calloc / realloc / free — with custom structs and pointer-based dynamic data structures to store, search and manage records. No framework, no safety net: a deliberate deep dive into the engineering fundamentals of memory layout, allocation and pointer discipline.',
+    tags: ['C', 'malloc / calloc', 'Data structures', 'Pointers', 'Memory management'],
+    source: 'https://github.com/luigiPinna/Progetto-C', visit: '',
   },
 ];
 

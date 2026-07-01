@@ -89,7 +89,19 @@ export default function TopBar({ onOpenCmd }) {
 
         {/* actions */}
         <div className="flex items-center justify-end gap-2 font-mono text-[12px]">
-          <span className="text-ink-mute">CAG · {time}</span>
+          <span className="hidden text-ink-mute sm:inline">CAG · {time}</span>
+          <a
+            href="https://news.ycombinator.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Hacker News"
+            className="inline-flex items-center gap-1.5 rounded border border-line-strong bg-bg-2 px-[7px] py-[3px] font-mono text-[11px] text-ink-soft transition-colors hover:border-ink hover:text-ink"
+          >
+            <span className="inline-flex h-[14px] w-[14px] items-center justify-center rounded-[2px] bg-[#ff6600] text-[9px] font-bold leading-none text-white">
+              Y
+            </span>
+            HN
+          </a>
           {onOpenCmd && (
             <button
               onClick={onOpenCmd}
