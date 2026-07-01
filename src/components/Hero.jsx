@@ -30,7 +30,7 @@ export default function Hero() {
 
             <div className="flex flex-col gap-1 font-mono text-[10.5px] leading-[1.5] tracking-[0.06em] text-ink-mute">
               <span className="font-medium tracking-[0.02em] text-ink">{meta.name}</span>
-              <span>{meta.role.toUpperCase()}</span>
+              <span>BACKEND · AI</span>
               <span className="my-1.5 h-px bg-line" />
               <span>{meta.location}</span>
               <span>LOCAL · {time}</span>
@@ -53,20 +53,19 @@ export default function Hero() {
             <h1 className="mb-7 m-0 font-sans text-[clamp(48px,9vw,124px)] font-medium leading-[0.95] tracking-[-0.035em] text-ink">
               <span>Software </span>
               <span className="font-serif font-normal italic tracking-[-0.025em] text-accent">engineer</span>
-              <br />
-              <span>building things </span>
-              <span className="font-serif font-normal italic tracking-[-0.025em] text-accent">that&nbsp;ship.</span>
             </h1>
 
             <p className="mb-10 max-w-[60ch] m-0 font-sans text-[clamp(17px,1.6vw,21px)] leading-[1.5] text-ink-soft">
-              I build web and software products and weave AI into them — mostly with{' '}
+              I design and build software — backends, APIs and web apps — and weave AI into
+              them, mostly with{' '}
+              <em className="font-serif font-normal italic text-ink">Python</em>,{' '}
               <em className="font-serif font-normal italic text-ink">FastAPI</em>,{' '}
               <em className="font-serif font-normal italic text-ink">React</em>,{' '}
               <em className="font-serif font-normal italic text-ink">Claude</em> and{' '}
               <em className="font-serif font-normal italic text-ink">OpenAI</em>, including{' '}
               <em className="font-serif font-normal italic text-ink">agent integration</em>{' '}
-              into existing systems. I like work that is pragmatic, well-structured, and tied
-              to a real business outcome.
+              into existing systems. I care about clean, well-structured code, solid
+              engineering, and shipping things tied to a real business outcome.
             </p>
 
             <div className="mt-2 flex flex-wrap items-center gap-4">
