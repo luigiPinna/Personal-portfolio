@@ -3,6 +3,8 @@ import { projects } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import SectionHead from './SectionHead';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export default function Work() {
   const [filter, setFilter] = useState('all');
 
@@ -78,6 +80,16 @@ function ProjectRow({ project, index }) {
       </div>
 
       <div>
+        {project.image && (
+          <div className="mb-3 aspect-[16/10] w-full max-w-[220px] overflow-hidden rounded border border-line bg-bg-2">
+            <img
+              src={`${basePath}${project.image}`}
+              alt={`${project.title} — screenshot`}
+              loading="lazy"
+              className="h-full w-full object-cover object-top grayscale-[0.15] transition-all duration-500 group-hover:scale-[1.02] group-hover:grayscale-0"
+            />
+          </div>
+        )}
         <div className="font-sans text-[22px] font-medium leading-tight tracking-[-0.015em] text-ink">
           {project.title}
         </div>
