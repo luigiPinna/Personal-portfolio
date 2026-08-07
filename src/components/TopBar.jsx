@@ -95,6 +95,7 @@ export default function TopBar({ onOpenCmd }) {
             target="_blank"
             rel="noopener noreferrer"
             title="Hacker News"
+            aria-label="Visit Hacker News"
             className="inline-flex items-center gap-1.5 rounded border border-line-strong bg-bg-2 px-[7px] py-[3px] font-mono text-[11px] text-ink-soft transition-colors hover:border-ink hover:text-ink"
           >
             <span className="inline-flex h-[14px] w-[14px] items-center justify-center rounded-[2px] bg-[#ff6600] text-[9px] font-bold leading-none text-white">
@@ -107,6 +108,7 @@ export default function TopBar({ onOpenCmd }) {
               onClick={onOpenCmd}
               className="inline-flex items-center gap-1 rounded border border-line-strong bg-bg-2 px-[7px] py-[3px] font-mono text-[11px] text-ink-soft transition-colors hover:border-ink hover:text-ink"
               title="Command palette"
+              aria-label="Open command palette"
             >
               ⌘ K
             </button>
@@ -125,6 +127,7 @@ export default function TopBar({ onOpenCmd }) {
                   theme === t.id ? 'bg-ink text-bg' : 'text-ink-mute hover:text-ink'
                 )}
                 title={t.id}
+                aria-label={`Switch to ${t.id} theme`}
               >
                 {t.icon}
               </button>

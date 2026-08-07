@@ -4,7 +4,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="it">
       <Head>
         <meta charSet="UTF-8" />
         <link rel="icon" href={`${basePath}/favicon.ico`} />

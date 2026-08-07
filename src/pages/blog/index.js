@@ -53,6 +53,8 @@ export default function BlogIndex() {
           content="Notes on AI in production, remote work, and the quiet parts of building software, by Luigi Pinna."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3efe8" />
+        <link rel="canonical" href="https://luigipinna.com/blog" />
         <link
           rel="alternate"
           type="application/rss+xml"
@@ -63,6 +65,7 @@ export default function BlogIndex() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://luigipinna.com/blog" />
         <meta property="og:title" content="Writing — Luigi Pinna" />
+        <meta property="og:locale" content="it_IT" />
         <meta
           property="og:description"
           content="Notes on AI in production, remote work, and the quiet parts of building software."

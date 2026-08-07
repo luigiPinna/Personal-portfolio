@@ -41,7 +41,7 @@ export const websiteLd = {
   '@type': 'WebSite',
   name: 'Luigi Pinna',
   url: `${SITE}/`,
-  inLanguage: 'en',
+  inLanguage: 'it',
   author: { '@type': 'Person', name: 'Luigi Pinna', url: `${SITE}/` },
 };
 

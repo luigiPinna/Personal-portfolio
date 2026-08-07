@@ -10,6 +10,7 @@ export default function Footer() {
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="inline-flex items-center gap-1 rounded border border-line-strong bg-bg-2 px-1.5 py-0.5 text-[11px] text-ink-soft transition-colors hover:border-ink hover:text-ink"
+          aria-label="Scroll back to top"
         >
           ↑ back to top
         </button>
