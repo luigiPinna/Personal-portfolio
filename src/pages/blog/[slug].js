@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import TopBar from '@/components/TopBar';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
+import ShareLinks from '@/components/ShareLinks';
 import {
   getPostBySlug,
   getAllPublishedSlugs,
@@ -112,6 +113,15 @@ export default function BlogPost({ post, others }) {
                   ref={bodyRef}
                   className="article-body max-w-[68ch] font-sans"
                   dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+              </div>
+              <div className="mt-12 grid items-center gap-4 md:grid-cols-[160px_1fr] md:gap-8">
+                <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-mute">
+                  — Share
+                </div>
+                <ShareLinks
+                  url={`https://luigipinna.com/blog/${post.slug}`}
+                  title={post.title}
                 />
               </div>
             </div>
