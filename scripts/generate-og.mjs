@@ -93,14 +93,19 @@ const tree = h('div', {
       letterSpacing: '-0.035em',
     },
   },
-    h('div', { style: flexRow },
+    h('div', { style: { ...flexRow, fontSize: '112px' } },
       h('div', {}, 'Software '),
       h('div', { style: { fontFamily: 'Serif', fontStyle: 'italic', fontWeight: 400, color: C.accent } }, 'engineer'),
     ),
-    h('div', { style: { ...flexRow, marginTop: '8px' } },
-      h('div', {}, 'building things '),
-      h('div', { style: { fontFamily: 'Serif', fontStyle: 'italic', fontWeight: 400, color: C.accent } }, 'that ship.'),
-    ),
+    h('div', {
+      style: {
+        marginTop: '28px',
+        fontSize: '32px',
+        lineHeight: 1.35,
+        letterSpacing: '-0.01em',
+        color: C.inkSoft,
+      },
+    }, 'Backends, APIs and web apps, with AI woven in.'),
   ),
 
   // Spacer that pushes footer down
@@ -114,7 +119,7 @@ const tree = h('div', {
       color: C.inkSoft,
       letterSpacing: '0.04em',
     },
-  }, 'FastAPI  ·  React  ·  Claude  ·  OpenAI'),
+  }, 'Python  ·  FastAPI  ·  React  ·  Claude  ·  OpenAI'),
 
   // Divider
   h('div', {

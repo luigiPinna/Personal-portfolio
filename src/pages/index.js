@@ -39,7 +39,7 @@ export default function Home() {
         <meta property="og:locale" content="it_IT" />
         <meta
           property="og:description"
-          content="Software engineer building things that ship — FastAPI, React, Claude, OpenAI. Based in Cagliari, Italy."
+          content="Software engineer — backends, APIs and web apps, with AI woven in. Python, FastAPI, React, Claude, OpenAI. Based in Cagliari, Italy."
         />
         <meta property="og:image" content="https://luigipinna.com/og.png" />
         <meta property="og:image:width" content="1200" />
@@ -50,7 +50,7 @@ export default function Home() {
         <meta name="twitter:title" content="Luigi Pinna — Software Engineer" />
         <meta
           name="twitter:description"
-          content="Software engineer building things that ship — FastAPI, React, Claude, OpenAI."
+          content="Software engineer — backends, APIs and web apps, with AI woven in. Python, FastAPI, React, Claude, OpenAI."
         />
         <meta name="twitter:image" content="https://luigipinna.com/og.png" />
 
